@@ -360,7 +360,7 @@ footer{background:#070E18;padding:64px 5% 32px}
 
 <nav id="nav">
   <!-- <a href="#" class="logo-wrap"> -->
-    <a href="#"><img src="images\logo.png" alt="FrevOne Logo" style="width:100%;max-width:200px"/></a>
+    <a href="#"><img src="images\Frevo Technologies Logo.png" alt="FrevOne Logo" style="width:100%;max-width:200px"/></a>
     <!-- <svg class="logo-svg" viewBox="0 0 280 56" xmlns="http://www.w3.org/2000/svg">
       <g transform="translate(26,28)">
         <circle cx="0" cy="0" r="23" fill="none" stroke="#00B8A0" stroke-width="1.5" opacity="0.25"/>
@@ -385,7 +385,7 @@ footer{background:#070E18;padding:64px 5% 32px}
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#frevone" title="Flagship Product"><span style="color:#1A2B5E">Frev</span><span style="color:teal">One</span></a></li>
-    <li><a href="#suite">Products</a></li>
+    <li><a href="#frevdesk">FrevDesk</a></li><li><a href="#suite">Products</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -476,6 +476,7 @@ footer{background:#070E18;padding:64px 5% 32px}
     <span class="marquee-item">Research & Innovation<span class="marquee-dot">◆</span></span>
     <span class="marquee-item">Skill Upliftment<span class="marquee-dot">◆</span></span>
     <span class="marquee-item">FrevOne Platform<span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">FrevDesk ITSM<span class="marquee-dot">◆</span></span>
     <span class="marquee-item">AI-Powered Innovations<span class="marquee-dot">◆</span></span>
     <span class="marquee-item">Enterprise HRMS<span class="marquee-dot">◆</span></span>
     <span class="marquee-item">Data Analytics<span class="marquee-dot">◆</span></span>
@@ -615,7 +616,7 @@ footer{background:#070E18;padding:64px 5% 32px}
       <div class="sr-l">
         <!-- FrevOne wordmark SVG matching uploaded logo style -->
         <div class="frevone-wordmark">
-          <a href="#"><img src="images\FrevOne_Logo.jpeg" alt="FrevOne Logo" style="width:100%;max-width:310px"/></a>
+          <a href="#"><img src="images\FrevOne Logo.jpeg" alt="FrevOne Logo" style="width:100%;max-width:310px"/></a>
           <!-- <svg width="310" height="82" viewBox="0 0 310 82" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <clipPath id="fo-l2"><rect x="0" y="0" width="198" height="82"/></clipPath>
@@ -727,6 +728,626 @@ footer{background:#070E18;padding:64px 5% 32px}
     <p style="text-align:center;margin-top:20px;font-size:13px;color:var(--muted)">Setup fee from ₹50,000 · Scale-up: ₹5–30/employee beyond plan limit · Two hosting options: Client-hosted or Frevo-managed cloud</p>
   </div> -->
 </section>
+<!-- ═══════════════════════ FREV DESK ITSM ═══════════════════════ -->
+<style>
+/* ── FrevDesk uses exact same palette as FrevOne section ── */
+/* Navy dark cards: #0D1B2A background  */
+/* Teal accent: var(--teal) #00B8A0     */
+/* White section bg: var(--white)        */
+/* Borders/muted: var(--border), var(--muted) */
+
+#frevdesk { background: var(--white); border-top: 1px solid var(--border); }
+
+/* ── Intro two-col (mirrors FrevOne layout exactly) ── */
+.fd-intro {
+  max-width: 1160px; margin: 0 auto;
+  padding: 100px 5% 72px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 72px; align-items: center;
+}
+.fd-eyebrow { font-size: 12px; font-weight: 800; letter-spacing: 2.5px; color: var(--teal); text-transform: uppercase; margin-bottom: 14px; }
+.fd-h1 { font-size: clamp(30px,3.8vw,48px); font-weight: 900; color: var(--ink); letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 18px; }
+.fd-lead { font-size: 17px; color: var(--body-text); line-height: 1.75; margin-bottom: 32px; }
+.fd-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
+.fd-pill {
+  display: flex; align-items: center; gap: 7px;
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 99px; padding: 7px 14px;
+  font-size: 13px; font-weight: 700; color: var(--body-text);
+  transition: all .2s; cursor: default;
+}
+.fd-pill:hover { border-color: var(--teal); color: var(--teal); background: #E0FBF7; }
+.fd-pill-dot { width: 6px; height: 6px; background: var(--teal); border-radius: 50%; flex-shrink: 0; }
+.fd-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ── Dark dashboard card (same as hero card) ── */
+.fd-dash {
+  background: #0D1B2A; border-radius: 20px;
+  box-shadow: 0 20px 64px rgba(13,27,42,.35);
+  overflow: hidden; border: 1px solid rgba(0,184,160,.15);
+}
+.fd-dash-bar {
+  height: 44px; background: #0D1B2A;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  display: flex; align-items: center; padding: 0 16px; gap: 8px;
+}
+.fd-db-dot { width: 11px; height: 11px; border-radius: 50%; }
+.fd-db-tabs { display: flex; gap: 2px; margin-left: auto; }
+.fd-db-tab {
+  font-size: 12px; font-weight: 600; color: rgba(255,255,255,.4);
+  padding: 5px 14px; border-radius: 7px; font-family: var(--f);
+}
+.fd-db-tab.act { background: rgba(255,255,255,.1); color: var(--white); }
+.fd-dash-body { padding: 22px; }
+.fd-stat3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 20px; }
+.fd-sbox {
+  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.07);
+  border-radius: 12px; padding: 16px; text-align: center;
+}
+.fd-sbox-n { font-size: 26px; font-weight: 900; color: var(--teal); line-height: 1; }
+.fd-sbox-l { font-size: 11px; color: rgba(255,255,255,.4); margin-top: 5px; font-weight: 600; }
+.fd-mod-label { font-size: 11px; font-weight: 700; color: rgba(255,255,255,.3); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+.fd-bar-r { display: flex; align-items: center; gap: 10px; margin-bottom: 9px; }
+.fd-bar-nm { font-size: 12px; color: rgba(255,255,255,.55); width: 74px; flex-shrink: 0; font-weight: 600; }
+.fd-bar-trk { flex: 1; height: 7px; background: rgba(255,255,255,.08); border-radius: 99px; overflow: hidden; }
+.fd-bar-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--navy), var(--teal)); }
+.fd-bar-pct { font-size: 12px; font-weight: 800; color: var(--teal); width: 34px; text-align: right; }
+.fd-tkt-list { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
+.fd-tkt {
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07);
+  border-radius: 10px; padding: 10px 13px;
+}
+.fd-tkt-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.fd-tkt-id { font-size: 10px; font-weight: 800; color: var(--teal); width: 56px; flex-shrink: 0; }
+.fd-tkt-txt { flex: 1; font-size: 12px; font-weight: 600; color: rgba(255,255,255,.75); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fd-sla { font-size: 10px; font-weight: 800; padding: 3px 9px; border-radius: 99px; flex-shrink: 0; }
+.sla-g { background: #064E3B; color: #6EE7B7; }
+.sla-y { background: #78350F; color: #FCD34D; }
+.sla-r { background: #7F1D1D; color: #FCA5A5; }
+
+/* ══════════════════════════════════════════
+   STICKY SCROLL — exact pattern from video
+   Left: sticky nav list
+   Right: tall panels that scroll past
+══════════════════════════════════════════ */
+.fd-scroll-outer { max-width: 1160px; margin: 0 auto; padding: 0 5% 100px; }
+.fd-scroll-hd { text-align: center; padding-bottom: 60px; }
+
+.fd-sticky-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: start;
+}
+
+/* LEFT — sticky nav */
+.fd-nav-col { position: sticky; top: 100px; align-self: start; }
+.fd-nav-item {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 20px 0 20px 18px; border-bottom: 1px solid var(--border);
+  cursor: pointer; transition: all .25s; position: relative;
+}
+.fd-nav-item:last-child { border-bottom: none; }
+.fd-nav-item::before {
+  content: ''; position: absolute; left: 0; top: 22px; bottom: 22px;
+  width: 3px; background: var(--teal); border-radius: 99px;
+  opacity: 0; transition: opacity .25s;
+}
+.fd-nav-item.active::before { opacity: 1; }
+.fd-nav-num {
+  width: 34px; height: 34px; border-radius: 9px;
+  background: var(--bg); border: 1.5px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 900; color: var(--muted);
+  flex-shrink: 0; transition: all .25s;
+}
+.fd-nav-item.active .fd-nav-num {
+  background: var(--navy); border-color: var(--navy); color: var(--white);
+}
+.fd-nav-body { flex: 1; }
+.fd-nav-title {
+  font-size: 16px; font-weight: 800; color: var(--ink);
+  transition: color .25s; margin-bottom: 0;
+}
+.fd-nav-item.active .fd-nav-title { color: var(--navy); }
+.fd-nav-desc {
+  font-size: 13px; color: var(--body-text); line-height: 1.6;
+  max-height: 0; overflow: hidden; opacity: 0;
+  transition: max-height .4s ease, opacity .35s ease, margin-top .3s;
+}
+.fd-nav-item.active .fd-nav-desc { max-height: 80px; opacity: 1; margin-top: 6px; }
+
+/* RIGHT — scroll panels */
+.fd-panels-col { display: flex; flex-direction: column; }
+.fd-panel {
+  min-height: 85vh; display: flex; align-items: center;
+  padding: 24px 0; opacity: .2; transition: opacity .4s;
+}
+.fd-panel.active { opacity: 1; }
+
+/* Dark UI card inside each panel */
+.fd-ui-card {
+  width: 100%; background: #0D1B2A; border-radius: 20px;
+  overflow: hidden; border: 1px solid rgba(0,184,160,.15);
+  box-shadow: 0 4px 20px rgba(13,27,42,.2);
+  transition: box-shadow .35s, border-color .35s;
+}
+.fd-panel.active .fd-ui-card {
+  box-shadow: 0 24px 72px rgba(13,27,42,.45);
+  border-color: rgba(0,184,160,.35);
+}
+.fd-ui-bar {
+  height: 42px; background: rgba(255,255,255,.04);
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  display: flex; align-items: center; padding: 0 16px; gap: 8px;
+}
+.fd-ui-dot { width: 10px; height: 10px; border-radius: 50%; }
+.fd-ui-title { font-size: 12px; font-weight: 600; color: rgba(255,255,255,.45); margin-left: 6px; }
+.fd-ui-body { padding: 22px; }
+
+/* Shared atoms inside dark cards */
+.fd-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+.fd-field {
+  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08);
+  border-radius: 9px; padding: 11px 13px;
+}
+.fd-fl { font-size: 10px; font-weight: 800; color: rgba(255,255,255,.3); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 4px; }
+.fd-fv { font-size: 13px; font-weight: 700; color: rgba(255,255,255,.85); }
+.fd-fv.teal { color: var(--teal); }
+.fd-fv.red { color: #FCA5A5; }
+.fd-fv.green { color: #6EE7B7; }
+
+.fd-ibox {
+  border-radius: 9px; padding: 11px 13px; margin-bottom: 9px;
+  border: 1px solid;
+}
+.ib-teal { background: rgba(0,184,160,.1); border-color: rgba(0,184,160,.3); }
+.ib-green { background: rgba(16,185,129,.1); border-color: rgba(16,185,129,.3); }
+.ib-amber { background: rgba(245,158,11,.1); border-color: rgba(245,158,11,.3); }
+.ib-red { background: rgba(239,68,68,.1); border-color: rgba(239,68,68,.3); }
+.fd-ib-lbl { font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 3px; }
+.ib-teal .fd-ib-lbl { color: var(--teal); }
+.ib-green .fd-ib-lbl { color: #6EE7B7; }
+.ib-amber .fd-ib-lbl { color: #FCD34D; }
+.ib-red .fd-ib-lbl { color: #FCA5A5; }
+.fd-ib-txt { font-size: 12px; font-weight: 600; color: rgba(255,255,255,.65); }
+
+/* technician rows */
+.fd-tech {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 12px; border-radius: 9px; margin-bottom: 8px;
+  background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+  transition: border-color .2s;
+}
+.fd-tech.sel { background: rgba(0,184,160,.1); border-color: rgba(0,184,160,.35); }
+.fd-av { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; flex-shrink: 0; }
+.fd-tech-nm { flex: 1; font-size: 13px; font-weight: 700; color: rgba(255,255,255,.8); }
+.fd-tech-sub { font-size: 11px; color: rgba(255,255,255,.35); margin-top: 1px; }
+.fd-chip { font-size: 10px; font-weight: 800; padding: 3px 9px; border-radius: 99px; flex-shrink: 0; }
+.chip-teal { background: rgba(0,184,160,.2); color: var(--teal); border: 1px solid rgba(0,184,160,.4); }
+.chip-grey { background: rgba(255,255,255,.07); color: rgba(255,255,255,.3); }
+
+/* SLA clocks */
+.fd-clocks { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+.fd-clock { border-radius: 11px; padding: 16px; text-align: center; border: 1px solid; }
+.clk-ok  { background: rgba(16,185,129,.1); border-color: rgba(16,185,129,.3); }
+.clk-warn{ background: rgba(245,158,11,.1);  border-color: rgba(245,158,11,.3);  }
+.clk-fail{ background: rgba(239,68,68,.1);   border-color: rgba(239,68,68,.3);   }
+.clk-lbl { font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px; }
+.clk-ok   .clk-lbl { color: #6EE7B7; }
+.clk-warn .clk-lbl { color: #FCD34D; }
+.clk-fail .clk-lbl { color: #FCA5A5; }
+.clk-time { font-size: 26px; font-weight: 900; line-height: 1; }
+.clk-ok   .clk-time { color: #6EE7B7; }
+.clk-warn .clk-time { color: #FCD34D; }
+.clk-fail .clk-time { color: #FCA5A5; }
+.clk-badge { display: inline-block; font-size: 10px; font-weight: 800; padding: 3px 10px; border-radius: 99px; margin-top: 6px; }
+.cb-ok   { background: #064E3B; color: #6EE7B7; }
+.cb-warn { background: #78350F; color: #FCD34D; }
+.cb-fail { background: #7F1D1D; color: #FCA5A5; }
+
+/* chat thread */
+.fd-msg { display: flex; gap: 9px; align-items: flex-start; margin-bottom: 10px; }
+.fd-bbl { border-radius: 3px 10px 10px 10px; padding: 10px 12px; flex: 1; border: 1px solid; }
+.bbl-pub  { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.1); }
+.bbl-int  { background: rgba(245,158,11,.08);  border-color: rgba(245,158,11,.25); }
+.bbl-rep  { background: rgba(0,184,160,.08);   border-color: rgba(0,184,160,.25);  }
+.bbl-who  { font-size: 10px; font-weight: 800; color: rgba(255,255,255,.35); margin-bottom: 4px; }
+.bbl-txt  { font-size: 12px; color: rgba(255,255,255,.7); line-height: 1.5; }
+.bbl-tag  { display: inline-block; font-size: 9px; font-weight: 800; padding: 2px 7px; border-radius: 99px; margin-top: 5px; }
+.bt-pub { background: rgba(59,130,246,.2); color: #93C5FD; }
+.bt-int { background: rgba(245,158,11,.2); color: #FCD34D; }
+.bt-rep { background: rgba(0,184,160,.2);  color: var(--teal); }
+
+/* automation rules */
+.fd-rule { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 10px; padding: 13px 14px; margin-bottom: 9px; }
+.fd-rule-hd { display: flex; justify-content: space-between; align-items: center; margin-bottom: 9px; }
+.fd-rule-nm { font-size: 13px; font-weight: 800; color: rgba(255,255,255,.8); }
+.fd-tog { width: 34px; height: 19px; background: var(--teal); border-radius: 99px; position: relative; flex-shrink: 0; }
+.fd-tog::after { content: ''; position: absolute; right: 3px; top: 3px; width: 13px; height: 13px; background: white; border-radius: 50%; }
+.fd-conds { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.rc { font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; }
+.rc-if   { background: rgba(0,184,160,.15);   color: var(--teal); }
+.rc-then { background: rgba(16,185,129,.15);  color: #6EE7B7; }
+.rc-arr  { color: rgba(255,255,255,.3); font-size: 12px; }
+
+/* notifications */
+.fd-notif { display: flex; gap: 10px; align-items: center; padding: 9px 12px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); border-radius: 10px; margin-bottom: 8px; }
+.fd-notif-ico { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; }
+.fd-notif-ttl { font-size: 12px; font-weight: 700; color: rgba(255,255,255,.8); }
+.fd-notif-tm  { font-size: 11px; color: rgba(255,255,255,.35); margin-top: 2px; }
+.fd-notif-dot { width: 7px; height: 7px; background: var(--teal); border-radius: 50%; flex-shrink: 0; }
+
+/* ── bottom feature grid ── */
+.fd-feat-grid {
+  max-width: 1160px; margin: 0 auto; padding: 0 5% 100px;
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 18px;
+}
+.fd-fc {
+  background: var(--white); border: 1.5px solid var(--border);
+  border-radius: 16px; padding: 24px 20px; transition: all .3s;
+  position: relative; overflow: hidden;
+}
+.fd-fc::after {
+  content: ''; position: absolute; bottom: 0; left: 0;
+  width: 100%; height: 3px;
+  background: linear-gradient(90deg, var(--navy), var(--teal));
+  transform: scaleX(0); transform-origin: left; transition: transform .3s;
+}
+.fd-fc:hover { transform: translateY(-5px); box-shadow: 0 14px 40px rgba(26,43,94,.1); border-color: var(--teal); }
+.fd-fc:hover::after { transform: scaleX(1); }
+.fd-fc-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--bg); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 14px; }
+.fd-fc-title { font-size: 15px; font-weight: 800; color: var(--ink); margin-bottom: 8px; }
+.fd-fc-desc  { font-size: 13px; color: var(--body-text); line-height: 1.6; }
+.fd-fc-list  { margin-top: 10px; display: flex; flex-direction: column; gap: 4px; }
+.fd-fc-item  { font-size: 11px; color: var(--muted); font-weight: 600; display: flex; align-items: center; gap: 5px; }
+.fd-fc-item::before { content: '→'; color: var(--teal); font-size: 10px; }
+
+/* ── dark close band (matches dark-cta in main site) ── */
+.fd-band { background: linear-gradient(135deg, #0D1B2A, var(--navy)); padding: 80px 5%; text-align: center; position: relative; overflow: hidden; }
+.fd-band::before { content: ''; position: absolute; top: -80px; left: 50%; transform: translateX(-50%); width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(0,184,160,.15), transparent 70%); pointer-events: none; }
+.fd-band-title { font-size: clamp(26px,3.5vw,42px); font-weight: 900; color: white; letter-spacing: -1.5px; margin-bottom: 14px; position: relative; }
+.fd-band-sub { font-size: 17px; color: rgba(255,255,255,.6); max-width: 480px; margin: 0 auto 32px; position: relative; }
+
+/* ── responsive ── */
+@media(max-width:900px){
+  .fd-intro,.fd-sticky-grid { grid-template-columns: 1fr; }
+  .fd-nav-col { position: static; }
+  .fd-panel { min-height: auto; opacity: 1; }
+  .fd-feat-grid { grid-template-columns: 1fr 1fr; }
+}
+@media(max-width:600px){ .fd-feat-grid { grid-template-columns: 1fr; } }
+</style>
+
+<section id="frevdesk">
+
+  <!-- ── TOP INTRO (mirrors FrevOne layout) ── -->
+  <div class="fd-intro sr">
+    <div>
+      <a href="#"><img src="images\FrevDesk Logo.png" alt="FrevDesk brand mark and blue teal logotype displayed on a white background" style="width:100%;max-width:310px"/></a>
+      <div class="fd-eyebrow">IT Service Management</div>
+      <h2 class="fd-h1">Stop chasing updates.<br/>Start closing tickets<br/><span style="color:var(--teal)">on time, every time.</span></h2>
+      <p class="fd-lead">FrevDesk gives your IT and support teams a single command centre for every request — with automated routing, real-time SLA tracking, and a complete audit trail. So nothing slips through the cracks, and every stakeholder always knows where things stand.</p>
+      <div class="fd-pills">
+        <div class="fd-pill"><span class="fd-pill-dot"></span>Omni-Channel Ticketing</div>
+        <div class="fd-pill"><span class="fd-pill-dot"></span>Intelligent Auto-Routing</div>
+        <div class="fd-pill"><span class="fd-pill-dot"></span>Real-Time SLA Tracking</div>
+        <div class="fd-pill"><span class="fd-pill-dot"></span>Workload Balancing</div>
+        <div class="fd-pill"><span class="fd-pill-dot"></span>Multi-Level Escalations</div>
+        <div class="fd-pill"><span class="fd-pill-dot"></span>Audit-Ready Governance</div>
+        <div class="fd-pill"><span class="fd-pill-dot"></span>Workflow Automation Engine</div>
+        <div class="fd-pill"><span class="fd-pill-dot"></span>Live Analytics & Reporting</div>
+      </div>
+      <div class="fd-ctas">
+        <a class="btn-cta btn-dark" href="#contact">Book a Live Demo →</a>
+        <a class="btn-cta btn-outline-dark" href="#contact">View Pricing</a>
+      </div>
+    </div>
+    <div class="sr-r">
+      <!-- Dark navy card — same style as FrevOne right panel -->
+      <div class="fd-dash">
+        <div class="fd-dash-bar">
+          <div class="fd-db-dot" style="background:#FF5F57"></div>
+          <div class="fd-db-dot" style="background:#FEBC2E"></div>
+          <div class="fd-db-dot" style="background:#28C840"></div>
+          <div class="fd-db-tabs">
+            <div class="fd-db-tab act">Dashboard</div>
+            <div class="fd-db-tab">Queue</div>
+            <div class="fd-db-tab">Reports</div>
+          </div>
+        </div>
+        <div class="fd-dash-body">
+          <div class="fd-stat3">
+            <div class="fd-sbox"><div class="fd-sbox-n">247</div><div class="fd-sbox-l">Open Tickets</div></div>
+            <div class="fd-sbox"><div class="fd-sbox-n" style="color:#FCD34D">12</div><div class="fd-sbox-l">At Risk</div></div>
+            <div class="fd-sbox"><div class="fd-sbox-n" style="color:#FCA5A5">3</div><div class="fd-sbox-l">Breached</div></div>
+          </div>
+          <div class="fd-mod-label">Active Service Queue</div>
+          <div class="fd-tkt-list">
+            <div class="fd-tkt"><div class="fd-tkt-dot" style="background:#EF4444"></div><div class="fd-tkt-id">#TKT-1082</div><div class="fd-tkt-txt">VPN down — 8 users affected</div><div class="fd-sla sla-r">BREACHED</div></div>
+            <div class="fd-tkt"><div class="fd-tkt-dot" style="background:#F59E0B"></div><div class="fd-tkt-id">#TKT-1081</div><div class="fd-tkt-txt">Outlook not syncing on new device</div><div class="fd-sla sla-y">AT RISK</div></div>
+            <div class="fd-tkt"><div class="fd-tkt-dot" style="background:#10B981"></div><div class="fd-tkt-id">#TKT-1080</div><div class="fd-tkt-txt">Printer on 3rd floor offline</div><div class="fd-sla sla-g">ON TIME</div></div>
+            <div class="fd-tkt"><div class="fd-tkt-dot" style="background:#10B981"></div><div class="fd-tkt-id">#TKT-1079</div><div class="fd-tkt-txt">Password reset — VIP requester</div><div class="fd-sla sla-g">ON TIME</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       STICKY SCROLL — LEFT NAV / RIGHT PANELS
+  ═══════════════════════════════════════ -->
+  <div class="fd-scroll-outer">
+    <div class="fd-scroll-hd sr">
+      <div class="eyebrow">The FrevDesk Lifecycle</div>
+      <h2 class="s-title">From request to resolution —<br/>completely automated.</h2>
+      <p style="font-size:16px;color:var(--body-text);max-width:560px;margin:0 auto">FrevDesk handles every stage of the ticket lifecycle so your team focuses on solving problems — not managing queues, chasing approvals, or hunting for status updates.</p>
+    </div>
+
+    <div class="fd-sticky-grid">
+
+      <!-- LEFT: sticky feature list -->
+      <div class="fd-nav-col" id="fd-nav">
+        <div class="fd-nav-item active" data-panel="0">
+          <div class="fd-nav-num">1</div>
+          <div class="fd-nav-body">
+            <div class="fd-nav-title">Capture — Every request, every channel</div>
+            <div class="fd-nav-desc">Employees raise tickets via a self-service portal or simply by sending an email. FrevDesk reads it, categorises it automatically, and sends an acknowledgement — without anyone lifting a finger.</div>
+          </div>
+        </div>
+        <div class="fd-nav-item" data-panel="1">
+          <div class="fd-nav-num">2</div>
+          <div class="fd-nav-body">
+            <div class="fd-nav-title">Route — No ticket sits unowned</div>
+            <div class="fd-nav-desc">The moment a ticket is created, the routing engine assigns it to the right person based on skill, availability, and current workload. No manual dispatching, no delays, no confusion.</div>
+          </div>
+        </div>
+        <div class="fd-nav-item" data-panel="2">
+          <div class="fd-nav-num">3</div>
+          <div class="fd-nav-body">
+            <div class="fd-nav-title">SLA — Accountability built in</div>
+            <div class="fd-nav-desc">Every ticket carries two live clocks — first response and full resolution. Both respect business hours and holidays. Escalations fire before a deadline is missed, not after. Your team always knows where they stand.</div>
+          </div>
+        </div>
+        <div class="fd-nav-item" data-panel="3">
+          <div class="fd-nav-num">4</div>
+          <div class="fd-nav-body">
+            <div class="fd-nav-title">Collaborate — Full context, always</div>
+            <div class="fd-nav-desc">Technicians work on tickets with threaded conversations, internal notes, and email replies — all in one place. No context is ever lost. Every change is logged with who made it and exactly when.</div>
+          </div>
+        </div>
+        <div class="fd-nav-item" data-panel="4">
+          <div class="fd-nav-num">5</div>
+          <div class="fd-nav-body">
+            <div class="fd-nav-title">Close — With a satisfaction guarantee</div>
+            <div class="fd-nav-desc">Tickets follow a controlled resolution path. Customer satisfaction is captured at closure. Unactioned resolutions auto-close after a configurable grace period — so queues stay clean and honest.</div>
+          </div>
+        </div>
+        <div class="fd-nav-item" data-panel="5">
+          <div class="fd-nav-num">6</div>
+          <div class="fd-nav-body">
+            <div class="fd-nav-title">Automate — Standard work runs itself</div>
+            <div class="fd-nav-desc">Configure rules once and let FrevDesk handle the rest. Auto-assign by category, escalate by SLA status, notify managers on priority breaches — all without manual intervention, every single time.</div>
+          </div>
+        </div>
+        <div class="fd-nav-item" data-panel="6">
+          <div class="fd-nav-num">7</div>
+          <div class="fd-nav-body">
+            <div class="fd-nav-title">Communicate — Proactive, not reactive</div>
+            <div class="fd-nav-desc">Your ticket list updates in real time. Requesters receive email updates at every meaningful milestone. Managers get notified before things go wrong — not after. No one has to chase anyone for a status update.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: tall scrolling panels -->
+      <div class="fd-panels-col" id="fd-panels">
+
+        <!-- P0: Raise -->
+        <div class="fd-panel active" data-idx="0">
+          <div class="fd-ui-card">
+            <div class="fd-ui-bar">
+              <div class="fd-ui-dot" style="background:#FF5F57"></div><div class="fd-ui-dot" style="background:#FEBC2E"></div><div class="fd-ui-dot" style="background:#28C840"></div>
+              <div class="fd-ui-title">Ticket Created — Portal & Email Capture</div>
+            </div>
+            <div class="fd-ui-body">
+              <div class="fd-2col">
+                <div class="fd-field"><div class="fd-fl">Subject</div><div class="fd-fv">VPN not connecting — urgent</div></div>
+                <div class="fd-field"><div class="fd-fl">Category</div><div class="fd-fv teal">🤖 AI: Network Access</div></div>
+              </div>
+              <div class="fd-2col">
+                <div class="fd-field"><div class="fd-fl">Priority</div><div class="fd-fv red">🔴 High</div></div>
+                <div class="fd-field"><div class="fd-fl">Impact</div><div class="fd-fv">Multiple Users (8)</div></div>
+              </div>
+              <div class="fd-field" style="margin-bottom:12px"><div class="fd-fl">Source</div><div class="fd-fv green">✉ Email → Auto-created</div></div>
+              <div class="fd-ibox ib-teal"><div class="fd-ib-lbl">Instant Confirmation</div><div class="fd-ib-txt">#TKT-1082 raised · Unique ticket number assigned · Acknowledgement sent to requester within seconds</div></div>
+              <div class="fd-ibox ib-green" style="margin-bottom:0"><div class="fd-ib-lbl">Smart Thread Detection</div><div class="fd-ib-txt">Replies to the original email are matched to the existing ticket — never creating a duplicate</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- P1: Route -->
+        <div class="fd-panel" data-idx="1">
+          <div class="fd-ui-card">
+            <div class="fd-ui-bar">
+              <div class="fd-ui-dot" style="background:#FF5F57"></div><div class="fd-ui-dot" style="background:#FEBC2E"></div><div class="fd-ui-dot" style="background:#28C840"></div>
+              <div class="fd-ui-title">Intelligent Routing Engine</div>
+            </div>
+            <div class="fd-ui-body">
+              <div class="fd-ibox ib-teal" style="margin-bottom:14px"><div class="fd-ib-lbl">Routing Rule Applied</div><div class="fd-ib-txt">Category: Network Access → IT Infrastructure team · Skill filter: Network Specialist required</div></div>
+              <div style="font-size:10px;font-weight:800;color:rgba(255,255,255,.3);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px">Available Technicians</div>
+              <div class="fd-tech sel">
+                <div class="fd-av" style="background:rgba(0,184,160,.2);color:var(--teal)">PS</div>
+                <div style="flex:1"><div class="fd-tech-nm">Priya Sharma</div><div class="fd-tech-sub">Load: 4/10 · Network Specialist · Available</div></div>
+                <div class="fd-chip chip-teal">AUTO-ASSIGNED</div>
+              </div>
+              <div class="fd-tech" style="opacity:.45">
+                <div class="fd-av" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.4)">RM</div>
+                <div style="flex:1"><div class="fd-tech-nm">Rahul Mehta</div><div class="fd-tech-sub">Load: 8/10 · General IT · Busy</div></div>
+                <div class="fd-chip chip-grey">BUSY</div>
+              </div>
+              <div class="fd-tech" style="opacity:.3">
+                <div class="fd-av" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.4)">AK</div>
+                <div style="flex:1"><div class="fd-tech-nm">Arjun Kumar</div><div class="fd-tech-sub">Load: 9/10 · On Leave till Thursday</div></div>
+                <div class="fd-chip chip-grey">ON LEAVE</div>
+              </div>
+              <div class="fd-ibox ib-green" style="margin-top:12px;margin-bottom:0"><div class="fd-ib-lbl">Instant Notification</div><div class="fd-ib-txt">Assignee and requester notified simultaneously — no manual follow-up required</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- P2: SLA -->
+        <div class="fd-panel" data-idx="2">
+          <div class="fd-ui-card">
+            <div class="fd-ui-bar">
+              <div class="fd-ui-dot" style="background:#FF5F57"></div><div class="fd-ui-dot" style="background:#FEBC2E"></div><div class="fd-ui-dot" style="background:#28C840"></div>
+              <div class="fd-ui-title">Live SLA Monitoring</div>
+            </div>
+            <div class="fd-ui-body">
+              <div class="fd-clocks">
+                <div class="fd-clock clk-fail"><div class="clk-lbl">First Response</div><div class="clk-time">-00:22</div><div class="clk-badge cb-fail">BREACHED</div></div>
+                <div class="fd-clock clk-warn"><div class="clk-lbl">Resolution</div><div class="clk-time">02:38</div><div class="clk-badge cb-warn">AT RISK</div></div>
+              </div>
+              <div class="fd-ibox ib-red"><div class="fd-ib-lbl">Automatic Escalation</div><div class="fd-ib-txt">Breach detected · Manager notified via email instantly · No manual intervention needed</div></div>
+              <div class="fd-ibox ib-amber"><div class="fd-ib-lbl">Active SLA Policy</div><div class="fd-ib-txt">Priority: High · Business hours: 9am–6pm · Clocks pause on weekends and public holidays automatically</div></div>
+              <div class="fd-ibox ib-teal" style="margin-bottom:0"><div class="fd-ib-lbl">Clock Hold Logged</div><div class="fd-ib-txt">Clock paused 14:22–14:36 · Reason recorded: Awaiting requester confirmation · Full audit trail maintained</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- P3: Work -->
+        <div class="fd-panel" data-idx="3">
+          <div class="fd-ui-card">
+            <div class="fd-ui-bar">
+              <div class="fd-ui-dot" style="background:#FF5F57"></div><div class="fd-ui-dot" style="background:#FEBC2E"></div><div class="fd-ui-dot" style="background:#28C840"></div>
+              <div class="fd-ui-title">Collaborative Ticket Workspace</div>
+            </div>
+            <div class="fd-ui-body">
+              <div class="fd-msg">
+                <div class="fd-av" style="background:rgba(0,184,160,.15);color:var(--teal);width:26px;height:26px;font-size:9px;flex-shrink:0">AK</div>
+                <div class="fd-bbl bbl-pub"><div class="bbl-who">Anjali Kumar · Requester</div><div class="bbl-txt">Unable to connect to VPN since 9am. Receiving an authentication error. Issue affects 8 team members.</div><div class="bbl-tag bt-pub">Public</div></div>
+              </div>
+              <div class="fd-msg">
+                <div class="fd-av" style="background:rgba(245,158,11,.15);color:#FCD34D;width:26px;height:26px;font-size:9px;flex-shrink:0">PS</div>
+                <div class="fd-bbl bbl-int"><div class="bbl-who">Priya Sharma · Internal Note</div><div class="bbl-txt">Root cause identified — service account password expired in Active Directory. Initiating reset now.</div><div class="bbl-tag bt-int">Internal Only</div></div>
+              </div>
+              <div class="fd-msg">
+                <div class="fd-av" style="background:rgba(0,184,160,.15);color:var(--teal);width:26px;height:26px;font-size:9px;flex-shrink:0">PS</div>
+                <div class="fd-bbl bbl-rep"><div class="bbl-who">Priya Sharma → Requester (via Email)</div><div class="bbl-txt">Hi Anjali, we have identified the root cause and are working on a fix. Estimated resolution time: 30 minutes. We will notify you immediately once resolved.</div><div class="bbl-tag bt-rep">Sent as Email</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- P4: Close -->
+        <div class="fd-panel" data-idx="4">
+          <div class="fd-ui-card">
+            <div class="fd-ui-bar">
+              <div class="fd-ui-dot" style="background:#FF5F57"></div><div class="fd-ui-dot" style="background:#FEBC2E"></div><div class="fd-ui-dot" style="background:#28C840"></div>
+              <div class="fd-ui-title">Resolution & CSAT Collection</div>
+            </div>
+            <div class="fd-ui-body">
+              <div class="fd-2col" style="margin-bottom:12px">
+                <div class="fd-field" style="text-align:center"><div class="fd-fl">Status</div><div class="fd-fv green" style="font-size:16px">✓ Resolved</div></div>
+                <div class="fd-field" style="text-align:center"><div class="fd-fl">Auto-close in</div><div class="fd-fv" style="font-size:16px">47:22:00</div></div>
+              </div>
+              <div class="fd-ibox ib-amber" style="margin-bottom:12px">
+                <div class="fd-ib-lbl">CSAT — Customer Satisfaction</div>
+                <div style="display:flex;gap:4px;margin-top:6px;align-items:center">
+                  <span style="font-size:18px">⭐⭐⭐⭐</span><span style="font-size:18px;opacity:.3">⭐</span>
+                  <span style="font-size:12px;font-weight:700;color:#FCD34D;margin-left:8px">4/5 · Good</span>
+                </div>
+              </div>
+              <div class="fd-ibox ib-teal" style="margin-bottom:10px"><div class="fd-ib-lbl">Requester Feedback</div><div class="fd-ib-txt">"Resolved efficiently once escalated. Response time after escalation was excellent. Initial response could be faster."</div></div>
+              <div class="fd-ibox ib-green" style="margin-bottom:0"><div class="fd-ib-lbl">Integrity Lock</div><div class="fd-ib-txt">Closed tickets are permanently locked — cannot be edited, reassigned, or silently reopened. Full audit trail preserved.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- P5: Automate -->
+        <div class="fd-panel" data-idx="5">
+          <div class="fd-ui-card">
+            <div class="fd-ui-bar">
+              <div class="fd-ui-dot" style="background:#FF5F57"></div><div class="fd-ui-dot" style="background:#FEBC2E"></div><div class="fd-ui-dot" style="background:#28C840"></div>
+              <div class="fd-ui-title">Automation Rules Engine</div>
+            </div>
+            <div class="fd-ui-body">
+              <div class="fd-rule"><div class="fd-rule-hd"><div class="fd-rule-nm">🔥 VIP Escalation</div><div class="fd-tog"></div></div><div class="fd-conds"><span class="rc rc-if">IF</span><span class="rc rc-if">Requester = VIP</span><span class="rc-arr">→</span><span class="rc rc-then">Priority: High</span><span class="rc-arr">+</span><span class="rc rc-then">Notify Manager</span></div></div>
+              <div class="fd-rule"><div class="fd-rule-hd"><div class="fd-rule-nm">🌐 Network → IT Team</div><div class="fd-tog"></div></div><div class="fd-conds"><span class="rc rc-if">IF</span><span class="rc rc-if">Category = Network</span><span class="rc-arr">→</span><span class="rc rc-then">Assign: IT Infrastructure</span></div></div>
+              <div class="fd-rule"><div class="fd-rule-hd"><div class="fd-rule-nm">⏰ SLA Warning Email</div><div class="fd-tog"></div></div><div class="fd-conds"><span class="rc rc-if">IF</span><span class="rc rc-if">SLA = AT RISK</span><span class="rc-arr">→</span><span class="rc rc-then">Email Supervisor</span></div></div>
+              <div class="fd-ibox ib-teal" style="margin-bottom:0"><div class="fd-ib-lbl">Zero-Touch Execution</div><div class="fd-ib-txt">Rules execute automatically on every ticket creation and update — in configured order, silently, reliably. Consistent handling is never dependent on human memory.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- P6: Notify -->
+        <div class="fd-panel" data-idx="6">
+          <div class="fd-ui-card">
+            <div class="fd-ui-bar">
+              <div class="fd-ui-dot" style="background:#FF5F57"></div><div class="fd-ui-dot" style="background:#FEBC2E"></div><div class="fd-ui-dot" style="background:#28C840"></div>
+              <div class="fd-ui-title">Real-Time Notification Centre</div>
+            </div>
+            <div class="fd-ui-body">
+              <div class="fd-notif"><div class="fd-notif-ico" style="background:rgba(16,185,129,.15)">✅</div><div style="flex:1"><div class="fd-notif-ttl">#TKT-1078 marked Resolved by Priya S.</div><div class="fd-notif-tm">Just now · Email sent to requester</div></div><div class="fd-notif-dot"></div></div>
+              <div class="fd-notif"><div class="fd-notif-ico" style="background:rgba(239,68,68,.15)">🚨</div><div style="flex:1"><div class="fd-notif-ttl">#TKT-1082 SLA Breached — First Response</div><div class="fd-notif-tm">2 min ago · Manager Vikram notified</div></div><div class="fd-notif-dot"></div></div>
+              <div class="fd-notif"><div class="fd-notif-ico" style="background:rgba(0,184,160,.15)">🔄</div><div style="flex:1"><div class="fd-notif-ttl">#TKT-1081 reassigned to Rahul M.</div><div class="fd-notif-tm">5 min ago · Both parties notified</div></div></div>
+              <div class="fd-notif"><div class="fd-notif-ico" style="background:rgba(245,158,11,.15)">📋</div><div style="flex:1"><div class="fd-notif-ttl">#TKT-1083 created via Email</div><div class="fd-notif-tm">8 min ago · Auto-assigned · Ack sent</div></div></div>
+              <div class="fd-ibox ib-teal" style="margin-top:8px;margin-bottom:0"><div class="fd-ib-lbl">Real-Time Queue Intelligence</div><div class="fd-ib-txt">Every open ticket list updates the moment a change occurs anywhere in the system — no page refresh, no delay, no stale data.</div></div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /panels -->
+    </div><!-- /sticky-grid -->
+  </div><!-- /scroll-outer -->
+
+  <!-- ── BOTTOM FEATURE CARDS (same card style as rest of site) ── -->
+  <div class="fd-feat-grid sr">
+    <div class="fd-fc d1"><div class="fd-fc-icon">🎧</div><div class="fd-fc-title">Omni-Channel Ticketing</div><div class="fd-fc-desc">Capture every request — whether raised via the self-service portal or a plain email — into a tracked, numbered, and fully auditable ticket instantly.</div><div class="fd-fc-list"><div class="fd-fc-item">Auto ticket numbers</div><div class="fd-fc-item">Email → Ticket conversion</div><div class="fd-fc-item">VIP flagging & dedup</div></div></div>
+    <div class="fd-fc d2"><div class="fd-fc-icon">⏱️</div><div class="fd-fc-title">SLA Management</div><div class="fd-fc-desc">Two clocks per ticket. Business-hours aware. Warning fires before breach, not after.</div><div class="fd-fc-list"><div class="fd-fc-item">Response + Resolution SLAs</div><div class="fd-fc-item">Multi-level escalation</div><div class="fd-fc-item">Public holiday calendar</div></div></div>
+    <div class="fd-fc d3"><div class="fd-fc-icon">🔀</div><div class="fd-fc-title">Intelligent Auto-Routing</div><div class="fd-fc-desc">Every ticket is immediately assigned to the right person based on skillset, live workload, and availability. No ticket sits unowned for even a second.</div><div class="fd-fc-list"><div class="fd-fc-item">Skill-based routing</div><div class="fd-fc-item">Workload balancing</div><div class="fd-fc-item">Leave-aware engine</div></div></div>
+    <div class="fd-fc d4"><div class="fd-fc-icon">💬</div><div class="fd-fc-title">Collaborative Workspace</div><div class="fd-fc-desc">Public, internal, or private notes. Real email replies. Full change log — who & when.</div><div class="fd-fc-list"><div class="fd-fc-item">3-level note visibility</div><div class="fd-fc-item">Real email threading</div><div class="fd-fc-item">Per-technician read state</div></div></div>
+    <div class="fd-fc d1"><div class="fd-fc-icon">⚙️</div><div class="fd-fc-title">Automation Rules</div><div class="fd-fc-desc">Build if-this-then-that rules that watch every ticket and act instantly — assign, escalate, notify — so standard handling never depends on someone remembering.</div><div class="fd-fc-list"><div class="fd-fc-item">Trigger on any field</div><div class="fd-fc-item">Multi-action rules</div><div class="fd-fc-item">Ordered execution</div></div></div>
+    <div class="fd-fc d2"><div class="fd-fc-icon">🛡️</div><div class="fd-fc-title">Security & Compliance</div><div class="fd-fc-desc">Define exactly who can view, edit, reassign, or close tickets — down to individual actions per role. A permanent, tamper-proof audit trail is built in from day one.</div><div class="fd-fc-list"><div class="fd-fc-item">Per-action permissions</div><div class="fd-fc-item">Guard rules safety net</div><div class="fd-fc-item">Permanent audit log</div></div></div>
+    <div class="fd-fc d3"><div class="fd-fc-icon">📊</div><div class="fd-fc-title">Performance Reports</div><div class="fd-fc-desc">Per-technician scorecards, SLA compliance rates, reopen ratios, and CSAT trends. Scheduled reports delivered to managers automatically every week.</div><div class="fd-fc-list"><div class="fd-fc-item">Live scoreboard</div><div class="fd-fc-item">Scheduled email reports</div><div class="fd-fc-item">CSV / Excel export</div></div></div>
+    <div class="fd-fc d4"><div class="fd-fc-icon">🔔</div><div class="fd-fc-title">Proactive Communication</div><div class="fd-fc-desc">Requesters, technicians, and managers stay informed with automated email updates at every milestone — created, assigned, resolved, and closed. No one chases anyone.</div><div class="fd-fc-list"><div class="fd-fc-item">Real-time list updates</div><div class="fd-fc-item">Email at every milestone</div><div class="fd-fc-item">In-app push notifications</div></div></div>
+  </div>
+
+  <!-- ── CLOSE BAND (same dark gradient as dark-cta) ── -->
+  <div class="fd-band">
+    <div class="fd-band-title">Your IT team deserves a smarter<br/>way to work.</div>
+    <p class="fd-band-sub">FrevDesk eliminates the chaos of untracked requests, missed SLAs, and reactive firefighting — so your team can deliver consistent, measurable service.</p>
+    <a class="btn-cta btn-teal" href="#contact" style="display:inline-flex">Book a Live Demo →</a>
+  </div>
+
+</section>
+
+<script>
+(function(){
+  var panels=document.querySelectorAll('.fd-panel');
+  var navItems=document.querySelectorAll('.fd-nav-item');
+  if(!panels.length)return;
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting&&e.intersectionRatio>=0.45){
+        var idx=e.target.dataset.idx;
+        panels.forEach(function(p){p.classList.remove('active')});
+        navItems.forEach(function(n){n.classList.remove('active')});
+        e.target.classList.add('active');
+        var ni=document.querySelector('.fd-nav-item[data-panel="'+idx+'"]');
+        if(ni)ni.classList.add('active');
+      }
+    });
+  },{threshold:0.45,rootMargin:'-80px 0px -80px 0px'});
+  panels.forEach(function(p){obs.observe(p)});
+  navItems.forEach(function(ni){
+    ni.addEventListener('click',function(){
+      var idx=ni.dataset.panel;
+      var panel=document.querySelector('.fd-panel[data-idx="'+idx+'"]');
+      if(panel)panel.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+  });
+})();
+</script>
+
 
 <!-- ─── CLIENTS ─── -->
 <section class="section clients" id="clients">
@@ -792,31 +1413,31 @@ footer{background:#070E18;padding:64px 5% 32px}
         <div class="suite-icon">👥</div>
         <div class="suite-name">FrevOne</div>
         <div class="suite-desc">AI-Powered HRMS & Workforce Management</div>
-        <!-- <span class="suite-badge">Live Now</span> -->
+        <span class="suite-badge">Live Now</span>
       </div>
       <div class="suite-card sr d2">
         <div class="suite-icon">🎧</div>
         <div class="suite-name">FrevDesk</div>
         <div class="suite-desc">IT Service Management & Helpdesk</div>
-        <!-- <span class="suite-badge soon">Coming Soon</span> -->
+        <span class="suite-badge soon">Coming Soon</span>
       </div>
       <div class="suite-card sr d3">
         <div class="suite-icon">📦</div>
         <div class="suite-name">FrevTrack</div>
         <div class="suite-desc">IT Asset Management & Tracking</div>
-        <!-- <span class="suite-badge soon">Coming Soon</span> -->
+        <span class="suite-badge soon">Coming Soon</span>
       </div>
        <div class="suite-card sr d5">
         <div class="suite-icon">🦺</div>
         <div class="suite-name">FrevGuard</div>
         <div class="suite-desc">Construction Safety & Approval Management</div>
-        <!-- <span class="suite-badge soon">Coming Soon</span> -->
+        <span class="suite-badge soon">Coming Soon</span>
       </div>
       <div class="suite-card sr d4">
         <div class="suite-icon">🖥️</div>
         <div class="suite-name">FrevPulse</div>
         <div class="suite-desc">IT Operations Monitoring & Observability</div>
-        <!-- <span class="suite-badge soon">In Pipeline</span> -->
+        <span class="suite-badge soon">In Pipeline</span>
       </div>
      
     </div>
@@ -842,11 +1463,11 @@ footer{background:#070E18;padding:64px 5% 32px}
         </div>
         <div class="c-info">
           <div class="c-icon">✉️</div>
-          <div><div class="c-label">Email Us</div><div class="c-val">info@frevo.co.in</div></div>
+          <div><div class="c-label">Email Us</div><div class="c-val">info@freshwavelabs.com</div></div>
         </div>
         <div class="c-info">
           <div class="c-icon">🌐</div>
-          <div><div class="c-label">Website</div><div class="c-val">www.frevo.co.in</div></div>
+          <div><div class="c-label">Website</div><div class="c-val">www.frevotechnologies.in</div></div>
         </div>
         <div style="margin-top:36px;padding:24px;background:linear-gradient(135deg,#EEF2FF,#E0FBF7);border-radius:16px;border:1px solid rgba(0,184,160,.2)">
           <div style="font-size:12px;font-weight:800;color:var(--teal);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px">People · Process · Performance · Possibilities</div>
@@ -890,7 +1511,7 @@ footer{background:#070E18;padding:64px 5% 32px}
   <div class="footer-grid">
     <div class="footer-top">
       <div class="ft-about">
-         <a href="#"><img src="images\logo.png" alt="FrevOne Logo" style="width:100%;max-width:200px"/></a>
+         <a href="#"><img src="images\Frevo Technologies Logo.png" alt="FrevOne Logo" style="width:100%;max-width:200px"/></a>
         <!-- <svg viewBox="0 0 200 48" width="180" xmlns="http://www.w3.org/2000/svg">
           <g transform="translate(22,24)">
             <path d="M0,-20 A20,20 0 0,1 17.3,-10" fill="none" stroke="#1A2B5E" stroke-width="3.5" stroke-linecap="round"/>
