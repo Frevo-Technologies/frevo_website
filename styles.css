@@ -42,6 +42,18 @@ nav.shadow{box-shadow:0 4px 24px rgba(0,0,0,.08)}
 .nav-links{display:flex;gap:32px;list-style:none}
 .nav-links a{font-size:14px;font-weight:600;color:var(--body-text);transition:color .2s}
 .nav-links a:hover{color:var(--navy)}
+.nav-menu{position:relative}
+.nav-menu-trigger{border:0;background:transparent;color:var(--body-text);font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px;cursor:pointer;transition:color .2s}
+.nav-menu-trigger:hover,.nav-menu-trigger[aria-expanded="true"]{color:var(--navy)}
+.nav-menu-chevron{width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .2s}
+.nav-menu-trigger[aria-expanded="true"] .nav-menu-chevron{transform:translateY(2px) rotate(225deg)}
+.nav-submenu{position:absolute;top:calc(100% + 18px);left:-18px;width:292px;padding:8px;display:none;list-style:none;background:var(--white);border:1px solid var(--border);border-radius:8px;box-shadow:0 18px 46px rgba(26,43,94,.14)}
+.nav-submenu.open{display:block}
+.nav-links .nav-product-link{display:block;padding:11px 12px;border-radius:6px}
+.nav-links .nav-product-link:hover{background:var(--bg)}
+.nav-product-name,.nav-product-desc{display:block}
+.nav-product-name{font-size:13px;font-weight:800;color:var(--navy)}
+.nav-product-desc{font-size:11px;font-weight:500;color:var(--muted);margin-top:2px}
 .nav-right{display:flex;gap:12px;align-items:center}
 .nav-btn{padding:9px 22px;border-radius:99px;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;font-family:var(--f)}
 .nav-btn-ghost{background:transparent;border:1.5px solid var(--border);color:var(--body-text)}
@@ -321,6 +333,9 @@ footer{background:#F4F7FB;border-top:1px solid var(--border);padding:64px 5% 24p
   nav .nav-links{display:none;position:absolute;top:68px;left:0;right:0;padding:18px 5% 24px;background:var(--white);border-bottom:1px solid var(--border);box-shadow:0 16px 30px rgba(26,43,94,.1);flex-direction:column;align-items:stretch;gap:0}
   nav .nav-links.open{display:flex}
   .nav-links a{display:block;padding:12px 0}
+  .nav-menu-trigger{width:100%;justify-content:space-between;padding:12px 0}
+  .nav-submenu{position:static;width:100%;margin:2px 0 10px;padding:6px;box-shadow:none;background:var(--bg)}
+  .nav-links .nav-product-link{padding:10px 12px}
   .nav-toggle{display:flex}
   .why-grid{grid-template-columns:1fr}
 }
