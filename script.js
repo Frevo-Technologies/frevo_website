@@ -7,34 +7,39 @@ if(nav){
 // Mobile navigation
 const navToggle=document.querySelector('.nav-toggle');
 const navLinks=document.getElementById('nav-links');
-const productToggle=document.querySelector('.nav-menu-trigger');
-const productMenu=document.getElementById('products-menu');
+const menuToggles=[...document.querySelectorAll('.nav-menu-trigger')];
 
-const closeProducts=()=>{
-  if(!productToggle||!productMenu)return;
-  productMenu.classList.remove('open');
-  productToggle.setAttribute('aria-expanded','false');
+const closeMenus=(except=null)=>{
+  menuToggles.forEach(toggle=>{
+    if(toggle===except)return;
+    const menu=document.getElementById(toggle.getAttribute('aria-controls'));
+    if(menu)menu.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false');
+  });
 };
 
-if(productToggle&&productMenu){
-  productToggle.addEventListener('click',event=>{
+menuToggles.forEach(toggle=>{
+  const menu=document.getElementById(toggle.getAttribute('aria-controls'));
+  if(!menu)return;
+  toggle.addEventListener('click',event=>{
     event.stopPropagation();
-    const isOpen=productToggle.getAttribute('aria-expanded')==='true';
-    productMenu.classList.toggle('open',!isOpen);
-    productToggle.setAttribute('aria-expanded',String(!isOpen));
+    const isOpen=toggle.getAttribute('aria-expanded')==='true';
+    closeMenus(toggle);
+    menu.classList.toggle('open',!isOpen);
+    toggle.setAttribute('aria-expanded',String(!isOpen));
   });
+});
 
-  document.addEventListener('click',event=>{
-    if(!event.target.closest('.nav-menu'))closeProducts();
-  });
-}
+document.addEventListener('click',event=>{
+  if(!event.target.closest('.nav-menu'))closeMenus();
+});
 
 if(navToggle&&navLinks){
   const closeNav=()=>{
     navLinks.classList.remove('open');
     navToggle.setAttribute('aria-expanded','false');
     navToggle.setAttribute('aria-label','Open navigation');
-    closeProducts();
+    closeMenus();
   };
 
   navToggle.addEventListener('click',()=>{
@@ -48,10 +53,10 @@ if(navToggle&&navLinks){
   document.addEventListener('keydown',event=>{
     if(event.key==='Escape'){
       const navWasOpen=navToggle.getAttribute('aria-expanded')==='true';
-      const productsWereOpen=productToggle&&productToggle.getAttribute('aria-expanded')==='true';
+      const openToggle=menuToggles.find(toggle=>toggle.getAttribute('aria-expanded')==='true');
       closeNav();
       if(navWasOpen)navToggle.focus();
-      else if(productsWereOpen)productToggle.focus();
+      else if(openToggle)openToggle.focus();
     }
   });
   window.addEventListener('resize',()=>{

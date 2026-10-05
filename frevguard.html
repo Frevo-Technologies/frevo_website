@@ -19,32 +19,45 @@
   <link rel="stylesheet" href="frevguard.css"/>
 </head>
 <body class="guard-page">
-  <nav id="nav">
-    <a href="index.html#hero" aria-label="Frevo Technologies home"><img src="images/frevo-technologies-logo.png" alt="Frevo Technologies" class="u-inline-001"/></a>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#services">Services</a></li>
-      <li class="nav-menu">
-        <button class="nav-menu-trigger" type="button" aria-expanded="false" aria-controls="products-menu">
-          Products <span class="nav-menu-chevron" aria-hidden="true"></span>
-        </button>
-        <ul class="nav-submenu" id="products-menu">
-          <li><a class="nav-product-link" href="index.html#frevone"><span class="nav-product-name">FrevOne</span><span class="nav-product-desc">HRMS & workforce management</span></a></li>
-          <li><a class="nav-product-link" href="index.html#frevdesk"><span class="nav-product-name">FrevDesk</span><span class="nav-product-desc">IT service management</span></a></li>
-          <li><a class="nav-product-link" href="index.html#suite"><span class="nav-product-name">FrevTrack</span><span class="nav-product-desc">IT asset management</span></a></li>
-          <li><a class="nav-product-link active" href="frevguard.html" aria-current="page"><span class="nav-product-name">FrevGuard</span><span class="nav-product-desc">Permit to work & safety control</span></a></li>
-          <li><a class="nav-product-link" href="index.html#suite"><span class="nav-product-name">FrevPulse</span><span class="nav-product-desc">IT operations monitoring</span></a></li>
-        </ul>
-      </li>
-      <li><a href="#guard-contact">Contact</a></li>
-    </ul>
-    <div class="nav-right">
-      <a class="nav-btn nav-btn-primary" href="#guard-contact">Request a demo</a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
+  <header class="site-header" id="nav">
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="site-logo" href="index.html#hero" aria-label="Frevo Technologies home"><img src="images/frevo-technologies-logo.png" alt="Frevo Technologies"/></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a class="nav-link" href="index.html#about">Company</a></li>
+        <li class="nav-menu">
+          <button class="nav-menu-trigger" type="button" aria-expanded="false" aria-controls="services-menu">Services <span class="nav-menu-chevron" aria-hidden="true"></span></button>
+          <div class="nav-submenu nav-services-menu" id="services-menu">
+            <div class="nav-panel-head"><span>Enterprise services</span><p>Focused engineering for complex operations.</p></div>
+            <div class="nav-service-grid">
+              <a class="nav-detail-link" href="index.html#service-ai"><span class="nav-item-mark">AI</span><span><b>AI & automation</b><small>Applied AI and intelligent workflows</small></span></a>
+              <a class="nav-detail-link" href="index.html#service-data"><span class="nav-item-mark">DA</span><span><b>Data & analytics</b><small>BI, dashboards and data platforms</small></span></a>
+              <a class="nav-detail-link" href="index.html#service-software"><span class="nav-item-mark">ES</span><span><b>Enterprise software</b><small>Operational platforms built for scale</small></span></a>
+              <a class="nav-detail-link" href="index.html#service-erp"><span class="nav-item-mark">ERP</span><span><b>ERP integration</b><small>SAP and Oracle connected systems</small></span></a>
+              <a class="nav-detail-link" href="index.html#service-iot"><span class="nav-item-mark">IoT</span><span><b>IoT engineering</b><small>Connected field and plant operations</small></span></a>
+              <a class="nav-detail-link" href="index.html#service-skills"><span class="nav-item-mark">L&D</span><span><b>Skill upliftment</b><small>Hands-on enterprise technology training</small></span></a>
+            </div>
+            <a class="nav-panel-feature" href="index.html#specialist-capability"><span><b>Specialist technical capability</b><small>Hard-to-find expertise for outcome-led delivery</small></span><strong aria-hidden="true">→</strong></a>
+          </div>
+        </li>
+        <li class="nav-menu">
+          <button class="nav-menu-trigger active" type="button" aria-expanded="false" aria-controls="products-menu">Products <span class="nav-menu-chevron" aria-hidden="true"></span></button>
+          <div class="nav-submenu nav-products-menu" id="products-menu">
+            <div class="nav-panel-head"><span>Frevo product suite</span><p>Purpose-built platforms for the work that keeps enterprises moving.</p></div>
+            <div class="nav-product-grid">
+              <a class="nav-product-link" href="frevone.html"><span class="nav-product-badge one">1</span><span><b>FrevOne</b><small>HRMS & workforce operations</small></span></a>
+              <a class="nav-product-link" href="index.html#frevdesk"><span class="nav-product-badge desk">D</span><span><b>FrevDesk</b><small>IT service management</small></span></a>
+              <a class="nav-product-link" href="index.html#suite"><span class="nav-product-badge track">T</span><span><b>FrevTrack</b><small>IT asset management</small></span></a>
+              <a class="nav-product-link active" href="frevguard.html" aria-current="page"><span class="nav-product-badge guard">G</span><span><b>FrevGuard</b><small>Permit to work & safety</small></span></a>
+              <a class="nav-product-link" href="index.html#suite"><span class="nav-product-badge pulse">P</span><span><b>FrevPulse</b><small>IT operations monitoring</small></span></a>
+            </div>
+            <a class="nav-panel-all" href="index.html#suite">Explore the complete product suite <span aria-hidden="true">→</span></a>
+          </div>
+        </li>
+        <li><a class="nav-link" href="index.html#clients">Clients</a></li>
+      </ul>
+      <div class="nav-right"><a class="nav-contact-link" href="#guard-contact">Contact</a><a class="nav-btn nav-btn-primary" href="#guard-contact">Request a demo <span aria-hidden="true">→</span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation"><span></span><span></span><span></span></button></div>
+    </nav>
+  </header>
 
   <main>
     <section class="guard-hero" id="guard-top">
@@ -339,13 +352,13 @@
       <div class="footer-top">
         <div class="ft-about"><a href="index.html#hero" aria-label="Frevo Technologies home"><img src="images/frevo-technologies-logo.png" alt="Frevo Technologies" class="u-inline-001"/></a></div>
         <div class="ft-col"><h4>Company</h4><ul><li><a href="index.html#about">About Us</a></li><li><a href="index.html#why">Why Frevo</a></li><li><a href="index.html#clients">Our Clients</a></li><li><a href="#guard-contact">Contact Us</a></li></ul></div>
-        <div class="ft-col"><h4>Products</h4><ul><li><a href="index.html#frevone">FrevOne - HRMS</a></li><li><a href="index.html#frevdesk">FrevDesk - ITSM</a></li><li><a href="index.html#suite">FrevTrack - ITAM</a></li><li><a href="frevguard.html" aria-current="page">FrevGuard - ePTW</a></li><li><a href="index.html#suite">FrevPulse - ITOM</a></li></ul></div>
+        <div class="ft-col"><h4>Products</h4><ul><li><a href="frevone.html">FrevOne - HRMS</a></li><li><a href="index.html#frevdesk">FrevDesk - ITSM</a></li><li><a href="index.html#suite">FrevTrack - ITAM</a></li><li><a href="frevguard.html" aria-current="page">FrevGuard - ePTW</a></li><li><a href="index.html#suite">FrevPulse - ITOM</a></li></ul></div>
         <div class="ft-col"><h4>FrevGuard</h4><ul><li><a href="#guard-overview">Overview</a></li><li><a href="#guard-workflow">Workflow</a></li><li><a href="#guard-capabilities">Capabilities</a></li><li><a href="#guard-industries">Industries</a></li></ul></div>
       </div>
       <div class="footer-bottom">
         <div class="ft-copy">© 2026 Frevo Technologies LLP. All rights reserved.</div>
         <div class="ft-legal"><a href="index.html">Corporate website</a><a href="#guard-contact">Contact</a></div>
-        <div class="ft-social"><a class="ft-soc-btn" href="mailto:info@frevo.co.in" title="Email Frevo Technologies" aria-label="Email Frevo Technologies">@</a></div>
+        <div class="ft-social"><a class="ft-soc-btn" href="mailto:info@frevo.co.in" title="Email Frevo Technologies" aria-label="Email Frevo Technologies">@</a><a class="ft-soc-btn" href="https://www.linkedin.com/company/frevo-technologies-llp" target="_blank" rel="noopener noreferrer" title="Frevo Technologies on LinkedIn" aria-label="Frevo Technologies on LinkedIn">in</a></div>
       </div>
     </div>
   </footer>
