@@ -1,0 +1,6 @@
+.git
+.gitignore
+.chrome-cdp-*
+.edge-*
+test-results
+*.log

@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="FrevGuard digital permit-to-work software for controlled authorization, field execution and traceable closure."
+    />
+    <meta name="theme-color" content="#101923" />
+    <title>FrevGuard | Digital Permit-to-Work &amp; Safety Control</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/frevo-favicon-32.png?v=3"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="64x64"
+      href="/assets/frevo-favicon-64.png?v=3"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/frevo-touch-icon.png?v=3"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/flow-themes.css" />
+    <link rel="stylesheet" href="/release.css?v=20261025-13" />
+    <link rel="stylesheet" href="/frevguard.css?v=20261025-1" />
+    <script src="/app.js?v=20261025-4" defer></script>
+    <script src="/frevguard.js?v=20261025-1" defer></script>
+  </head>
+  <body class="v2-release product-page product-page-v2 guard-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Frevo Technologies home"
+        ><img src="/assets/frevo-logo.png" alt="Frevo Technologies"
+      /></a>
+      <button
+        class="menu-toggle icon-button"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-nav"
+        aria-label="Open navigation"
+      >
+        <span></span><span></span>
+      </button>
+      <nav id="main-nav" class="main-nav">
+        <a href="/">Home</a>
+        <div class="nav-products">
+          <button
+            class="nav-products-trigger"
+            type="button"
+            aria-expanded="false"
+            aria-controls="products-submenu"
+          >
+            Products <span aria-hidden="true"></span>
+          </button>
+          <div class="products-submenu" id="products-submenu">
+            <a href="/products/frevone/"
+              ><strong>FrevOne</strong><small>Complete HRMS</small></a
+            >
+            <a href="/products/frevdesk/"
+              ><strong>FrevDesk</strong
+              ><small>IT service &amp; assets</small></a
+            >
+            <a href="/products/frevguard/" aria-current="page"
+              ><strong>FrevGuard</strong><small>Permit to work</small></a
+            >
+          </div>
+        </div>
+        <a href="#lifecycle">Lifecycle</a><a href="#controls">Controls</a
+        ><a href="#operations">Operations</a
+        ><a href="#delivery">Implementation</a>
+      </nav>
+      <a
+        class="button button-small header-cta"
+        href="mailto:info@frevo.co.in?subject=FrevGuard%20demo%20request"
+        >Book a FrevGuard demo <span>&#8599;</span></a
+      >
+    </header>
+
+    <main id="main">
+      <section class="guard-hero">
+        <div class="guard-hero-copy">
+          <div class="guard-product-mark" aria-label="FrevGuard">
+            <span>F</span><strong>FrevGuard</strong
+            ><small>DIGITAL PERMIT TO WORK</small>
+          </div>
+          <p class="kicker">CONTROL HIGH-RISK WORK</p>
+          <h1>Every permit.<br /><em>Every control visible.</em></h1>
+          <p class="guard-hero-lead">
+            Govern work requests, hazards, isolations, authorization, field
+            execution and safe hand-back through one accountable permit record.
+          </p>
+          <p class="guard-audience">
+            <strong>Built for:</strong> industrial sites, utilities,
+            infrastructure, maintenance teams and contractor-led operations.
+          </p>
+          <div class="button-row">
+            <a
+              class="button"
+              href="mailto:info@frevo.co.in?subject=FrevGuard%20demo%20request"
+              >Book a walkthrough <span>&#8599;</span></a
+            >
+            <a class="text-link" href="#lifecycle"
+              >Follow PTW-192 <span>&#8595;</span></a
+            >
+          </div>
+          <div class="guard-hero-proof" aria-label="FrevGuard outcomes">
+            <span><strong>Controlled</strong>Authorization</span
+            ><span><strong>Visible</strong>Field status</span
+            ><span><strong>Traceable</strong>Close-out</span>
+          </div>
+        </div>
+
+        <div class="guard-command" data-guard-cycle aria-live="polite">
+          <header class="guard-command-head">
+            <div>
+              <span class="guard-mini-mark">F</span
+              ><strong>Permit control room</strong>
+            </div>
+            <small><i></i> LIVE OPERATING CONTEXT</small>
+          </header>
+          <div class="guard-command-body">
+            <aside class="guard-command-nav" aria-label="Permit modules">
+              <strong>WORKSPACE</strong
+              ><span class="is-active">Active permits <b>12</b></span
+              ><span>Awaiting review <b>04</b></span
+              ><span>Suspended <b>01</b></span
+              ><span>Closed today <b>18</b></span>
+            </aside>
+            <div class="guard-permit-view">
+              <div class="guard-record-bar">
+                <div>
+                  <span>PTW-192 / HOT WORK</span
+                  ><strong>Welding on process line P-14</strong>
+                </div>
+                <b data-guard-status>Request captured</b>
+              </div>
+              <div class="guard-stage-summary">
+                <span data-guard-count>01 / 06</span>
+                <div>
+                  <small data-guard-kicker>REQUEST &amp; SCOPE</small>
+                  <h2 data-guard-title>
+                    Define the work before it reaches the field.
+                  </h2>
+                  <p data-guard-copy>
+                    Job, location, timing, people and permit type are captured
+                    in one controlled request.
+                  </p>
+                </div>
+              </div>
+              <div class="guard-evidence-grid">
+                <article>
+                  <span>WORK AREA</span
+                  ><strong data-guard-area>Utilities / P-14</strong>
+                </article>
+                <article>
+                  <span>ACCOUNTABLE ROLE</span
+                  ><strong data-guard-role>Permit requester</strong>
+                </article>
+                <article>
+                  <span>CONTROL EVIDENCE</span
+                  ><strong data-guard-evidence>Scope and work party</strong>
+                </article>
+              </div>
+              <div class="guard-decision-line">
+                <span data-guard-event>Draft permit PTW-192 created</span
+                ><small data-guard-time>08:10</small>
+              </div>
+            </div>
+          </div>
+          <footer class="guard-phase-track" aria-label="Permit progress">
+            <span class="is-active"><i></i>Request</span
+            ><span><i></i>Assess</span><span><i></i>Isolate</span
+            ><span><i></i>Authorize</span><span><i></i>Execute</span
+            ><span><i></i>Close</span>
+          </footer>
+        </div>
+      </section>
+
+      <section class="section guard-lifecycle" id="lifecycle">
+        <div class="section-heading split reveal">
+          <div>
+            <p class="kicker">ONE PERMIT / COMPLETE CONTROL LIFECYCLE</p>
+            <h2>Watch a hot-work permit become safe to execute.</h2>
+          </div>
+          <p>
+            FrevGuard keeps the permit identity constant while evidence,
+            responsibility and operating status change around it.
+          </p>
+        </div>
+        <div class="permit-lifecycle-board reveal" data-guard-cycle>
+          <header>
+            <div>
+              <span class="guard-mini-mark">F</span><strong>PTW-192</strong>
+            </div>
+            <small data-guard-status>Request captured</small>
+          </header>
+          <div class="permit-route">
+            <article class="is-active">
+              <span>01</span><i>+</i><strong>Request</strong
+              ><small>Scope, place and work party</small>
+            </article>
+            <article>
+              <span>02</span><i>!</i><strong>Assess</strong
+              ><small>Hazards and controls</small>
+            </article>
+            <article>
+              <span>03</span><i>&#9632;</i><strong>Isolate</strong
+              ><small>LOTO and gas test</small>
+            </article>
+            <article>
+              <span>04</span><i>&#10003;</i><strong>Authorize</strong
+              ><small>Human decision and conditions</small>
+            </article>
+            <article>
+              <span>05</span><i>&#9654;</i><strong>Execute</strong
+              ><small>Validity and field status</small>
+            </article>
+            <article>
+              <span>06</span><i>&#10003;</i><strong>Close</strong
+              ><small>Hand-back and audit record</small>
+            </article>
+            <div class="permit-route-line"><i data-guard-progress></i></div>
+          </div>
+          <div class="permit-stage-detail">
+            <div>
+              <small data-guard-kicker>REQUEST &amp; SCOPE</small>
+              <h3 data-guard-title>
+                Define the work before it reaches the field.
+              </h3>
+            </div>
+            <p data-guard-copy>
+              Job, location, timing, people and permit type are captured in one
+              controlled request.
+            </p>
+            <dl>
+              <div>
+                <dt>Responsible</dt>
+                <dd data-guard-role>Permit requester</dd>
+              </div>
+              <div>
+                <dt>Evidence added</dt>
+                <dd data-guard-evidence>Scope and work party</dd>
+              </div>
+              <div>
+                <dt>Recorded event</dt>
+                <dd data-guard-event>Draft permit PTW-192 created</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="section guard-controls" id="controls">
+        <div class="section-heading split reveal">
+          <div>
+            <p class="kicker">CONTROL ENGINE</p>
+            <h2>Configure the permit. Preserve the discipline.</h2>
+          </div>
+          <p>
+            Forms can reflect the site's permit types and evidence requirements
+            while approvals remain attributable to authorized people.
+          </p>
+        </div>
+        <div class="control-workbench reveal">
+          <aside>
+            <span>PERMIT TYPE</span
+            ><button class="is-active" type="button" data-control-tab="hot">
+              <i></i>Hot work</button
+            ><button type="button" data-control-tab="confined">
+              <i></i>Confined space</button
+            ><button type="button" data-control-tab="height">
+              <i></i>Work at height</button
+            ><button type="button" data-control-tab="electrical">
+              <i></i>Electrical work
+            </button>
+          </aside>
+          <div class="control-form">
+            <header>
+              <div>
+                <span>CONFIGURED CHECKLIST</span>
+                <h3 data-control-title>Hot-work control set</h3>
+              </div>
+              <b>Version 4.2</b>
+            </header>
+            <div class="control-checks" data-control-checks>
+              <label
+                ><input type="checkbox" checked disabled /><span></span
+                >Combustibles removed or protected</label
+              ><label
+                ><input type="checkbox" checked disabled /><span></span>Fire
+                watch assigned</label
+              ><label
+                ><input type="checkbox" checked disabled /><span></span
+                >Isolation reference attached</label
+              ><label
+                ><input type="checkbox" checked disabled /><span></span
+                >Atmospheric test within limit</label
+              >
+            </div>
+            <div class="control-rule">
+              <span>ISSUE RULE</span
+              ><strong data-control-rule
+                >4 required checks + authorized review</strong
+              ><small
+                >System validates completeness; an authorized person
+                decides.</small
+              >
+            </div>
+          </div>
+          <div class="control-evidence">
+            <span>EVIDENCE READINESS</span>
+            <div class="readiness-ring">
+              <strong data-control-score>100</strong><small>%</small>
+            </div>
+            <h3>Ready for human review</h3>
+            <ul>
+              <li><i></i>Required fields complete</li>
+              <li><i></i>Supporting references linked</li>
+              <li><i></i>Decision authority identified</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section guard-evidence-section">
+        <div class="section-heading split reveal">
+          <div>
+            <p class="kicker">FIELD EVIDENCE</p>
+            <h2>Isolation, atmosphere and conditions stay with the permit.</h2>
+          </div>
+          <p>
+            Field checks are presented as evidence in context, not detached
+            messages or paper references that reviewers must reconstruct.
+          </p>
+        </div>
+        <div class="evidence-console reveal">
+          <div class="evidence-map">
+            <header>
+              <span>WORK AREA / UTILITIES</span
+              ><small>LIVE PERMIT OVERLAY</small>
+            </header>
+            <div class="plant-grid" aria-hidden="true">
+              <span class="plant-line line-a"></span
+              ><span class="plant-line line-b"></span
+              ><span class="plant-unit unit-a">P-14</span
+              ><span class="plant-unit unit-b">V-08</span
+              ><span class="plant-unit unit-c">MCC-2</span
+              ><span class="work-zone"><i></i>HOT WORK ZONE</span>
+            </div>
+          </div>
+          <div class="evidence-stream">
+            <article class="is-complete">
+              <span>08:31</span><i></i>
+              <div>
+                <small>ISOLATION</small><strong>LOTO-48 verified</strong>
+                <p>Process line isolated and confirmation attached.</p>
+              </div>
+            </article>
+            <article class="is-complete">
+              <span>08:42</span><i></i>
+              <div>
+                <small>ATMOSPHERE</small><strong>Gas test accepted</strong>
+                <p>Recorded result remains visible with test time.</p>
+              </div>
+            </article>
+            <article class="is-live">
+              <span>09:05</span><i></i>
+              <div>
+                <small>FIELD STATUS</small><strong>Permit active</strong>
+                <p>Conditions and validity remain visible to operations.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section guard-handoffs" id="roles">
+        <div class="section-heading split reveal">
+          <div>
+            <p class="kicker">ACCOUNTABLE HAND-OFFS</p>
+            <h2>The record moves. Responsibility never disappears.</h2>
+          </div>
+          <p>
+            Each role sees the decision or evidence relevant to its work, while
+            the permit retains a complete history of who did what and when.
+          </p>
+        </div>
+        <div class="handoff-board reveal">
+          <header>
+            <span>REQUESTER</span><span>FIELD CONTROL</span
+            ><span>AREA AUTHORITY</span><span>CONTROL ROOM</span>
+          </header>
+          <div class="handoff-lanes">
+            <div class="handoff-path"><i></i></div>
+            <article data-role="REQUESTER">
+              <b>01</b><strong>Defines work</strong
+              ><small>Scope, location, timing</small>
+            </article>
+            <article data-role="FIELD CONTROL">
+              <b>02</b><strong>Builds evidence</strong
+              ><small>Hazards, isolation, tests</small>
+            </article>
+            <article data-role="AREA AUTHORITY">
+              <b>03</b><strong>Authorizes</strong
+              ><small>Decision and conditions</small>
+            </article>
+            <article data-role="CONTROL ROOM">
+              <b>04</b><strong>Tracks &amp; closes</strong
+              ><small>Status, hand-back, record</small>
+            </article>
+            <div class="handoff-packet">
+              <span>PTW-192</span><small>ACCOUNTABLE RECORD</small>
+            </div>
+          </div>
+          <footer>
+            <span><i></i>Identity recorded</span><span><i></i>Time stamped</span
+            ><span><i></i>Decision preserved</span
+            ><span><i></i>Status visible</span>
+          </footer>
+        </div>
+      </section>
+
+      <section class="section guard-operations" id="operations">
+        <div class="section-heading split reveal">
+          <div>
+            <p class="kicker">SITE OPERATIONS VIEW</p>
+            <h2>Know what is active, changing or waiting for action.</h2>
+          </div>
+          <p>
+            Operational teams can scan permit exposure and open the complete
+            record behind every status without rebuilding context.
+          </p>
+        </div>
+        <div class="operations-dashboard reveal">
+          <header>
+            <div>
+              <span class="guard-mini-mark">F</span
+              ><strong>Permit operations</strong>
+            </div>
+            <small>25 OCT 2026 / DAY SHIFT</small>
+          </header>
+          <div class="operations-metrics">
+            <article>
+              <span>ACTIVE NOW</span><strong>12</strong
+              ><small>Across 4 operating areas</small>
+            </article>
+            <article>
+              <span>EXPIRING &lt; 60 MIN</span><strong>03</strong
+              ><small>Conditions need review</small>
+            </article>
+            <article>
+              <span>AWAITING AUTHORITY</span><strong>04</strong
+              ><small>Evidence ready</small>
+            </article>
+            <article class="metric-alert">
+              <span>SUSPENDED</span><strong>01</strong
+              ><small>Field condition changed</small>
+            </article>
+          </div>
+          <div class="operations-main">
+            <div class="permit-register">
+              <div class="permit-register-head">
+                <span>PERMIT</span><span>WORK / AREA</span><span>OWNER</span
+                ><span>VALID UNTIL</span><span>STATUS</span>
+              </div>
+              <div>
+                <b>PTW-192</b><span>Hot work / Utilities</span
+                ><span>A. Singh</span><span>14:30</span
+                ><strong class="status-active">Active</strong>
+              </div>
+              <div>
+                <b>PTW-188</b><span>Confined space / Tank farm</span
+                ><span>R. Khan</span><span>11:45</span
+                ><strong class="status-review">Review</strong>
+              </div>
+              <div>
+                <b>PTW-181</b><span>Electrical / Substation B</span
+                ><span>P. Das</span><span>12:20</span
+                ><strong class="status-hold">Suspended</strong>
+              </div>
+              <div>
+                <b>PTW-176</b><span>Work at height / Bay 03</span
+                ><span>M. Rao</span><span>13:10</span
+                ><strong class="status-active">Active</strong>
+              </div>
+            </div>
+            <aside class="operations-audit">
+              <span>LATEST CONTROL EVENTS</span>
+              <ol>
+                <li>
+                  <time>10:08</time>
+                  <p>
+                    <strong>PTW-181 suspended</strong>Field condition changed
+                  </p>
+                </li>
+                <li>
+                  <time>09:54</time>
+                  <p><strong>PTW-192 acknowledged</strong>Work party briefed</p>
+                </li>
+                <li>
+                  <time>09:41</time>
+                  <p>
+                    <strong>PTW-188 submitted</strong>Awaiting area authority
+                  </p>
+                </li>
+                <li>
+                  <time>09:20</time>
+                  <p><strong>PTW-172 closed</strong>Hand-back recorded</p>
+                </li>
+              </ol>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section guard-delivery" id="delivery">
+        <div class="section-heading split reveal">
+          <div>
+            <p class="kicker">IMPLEMENTATION &amp; SUPPORT</p>
+            <h2>Begin with the permit process your site already governs.</h2>
+          </div>
+          <p>
+            Configuration follows the confirmed operating model, with controlled
+            validation before teams rely on it in the field.
+          </p>
+        </div>
+        <div class="guard-delivery-grid reveal">
+          <article>
+            <span>01</span>
+            <h3>Discover</h3>
+            <p>
+              Map permit types, roles, hazards, evidence and decision points.
+            </p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Configure</h3>
+            <p>
+              Shape forms, controls, responsibilities, statuses and
+              notifications.
+            </p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Validate</h3>
+            <p>
+              Run representative permits and verify exception paths with site
+              teams.
+            </p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Launch</h3>
+            <p>
+              Prepare users, migrate agreed references and phase the operational
+              rollout.
+            </p>
+          </article>
+          <article class="delivery-support">
+            <span>05 / CONTINUOUS</span>
+            <h3>Support &amp; improve</h3>
+            <p>
+              Stabilization, configuration guidance and operational reviews
+              beyond go-live.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section faq-section guard-faq">
+        <div class="faq-layout">
+          <div class="faq-intro reveal">
+            <p class="kicker">FREQUENT QUESTIONS</p>
+            <h2>Questions permit and safety teams ask.</h2>
+            <p>
+              The exact workflow is confirmed against the site's approved permit
+              procedure and operating responsibilities.
+            </p>
+          </div>
+          <div class="faq-list reveal">
+            <details>
+              <summary>
+                <span>01</span>Does FrevGuard approve permits automatically?
+              </summary>
+              <p>
+                No. FrevGuard validates completeness and presents the required
+                context. Approval or rejection remains an accountable human
+                decision.
+              </p>
+            </details>
+            <details>
+              <summary>
+                <span>02</span>Can permit types and checks vary by site?
+              </summary>
+              <p>
+                Yes. Permit types, forms, mandatory evidence, roles and status
+                paths are configured around the agreed operating process.
+              </p>
+            </details>
+            <details>
+              <summary>
+                <span>03</span>Can isolation and gas-test evidence be attached?
+              </summary>
+              <p>
+                Isolation references, verification context and time-stamped
+                atmospheric results can remain associated with the relevant
+                permit record.
+              </p>
+            </details>
+            <details>
+              <summary>
+                <span>04</span>What happens when field conditions change?
+              </summary>
+              <p>
+                The permit can move through governed states such as suspension,
+                correction or revalidation according to the configured site
+                process.
+              </p>
+            </details>
+            <details>
+              <summary>
+                <span>05</span>Can contractors participate in the workflow?
+              </summary>
+              <p>
+                Contractor roles and access are established during discovery so
+                external work parties participate within controlled
+                responsibilities.
+              </p>
+            </details>
+            <details>
+              <summary>
+                <span>06</span>What remains in the audit history?
+              </summary>
+              <p>
+                The record can preserve permit identity, evidence, responsible
+                users, decisions, status changes, validity, hand-back and
+                closure context.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-cta guard-final-cta">
+        <div>
+          <p class="kicker">READY TO MAP A REAL PERMIT?</p>
+          <h2>Bring one permit type. We will walk through every control.</h2>
+          <p>
+            No-obligation walkthrough using an agreed representative scenario.
+          </p>
+        </div>
+        <a
+          class="button"
+          href="mailto:info@frevo.co.in?subject=FrevGuard%20permit%20workflow%20discussion"
+          >Discuss your permit workflow <span>&#8599;</span></a
+        >
+      </section>
+    </main>
+
+    <footer class="copyright-strip">
+      <small
+        >&copy; <span data-year></span> Frevo Technologies LLP. All rights
+        reserved.</small
+      >
+    </footer>
+  </body>
+</html>
