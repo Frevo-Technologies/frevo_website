@@ -27,6 +27,10 @@ Product routes:
 - `http://localhost:8088/products/frevdesk/`
 - `http://localhost:8088/products/frevguard/`
 
+Company routes:
+
+- `http://localhost:8088/clients/`
+
 The Frevo Signature opening runs once per browser session. Use
 `http://localhost:8088/?signature=preview` to replay it while testing.
 

@@ -116,54 +116,68 @@
 
   const menuButton = $(".menu-toggle");
   const nav = $("#main-nav");
-  const productMenu = $(".nav-products");
-  const productTrigger = productMenu && $(".nav-products-trigger", productMenu);
-  const productSubmenu = productMenu && $(".products-submenu", productMenu);
-  const closeProductMenu = (returnFocus = false) => {
-    if (!productMenu || !productTrigger) return;
-    productMenu.classList.remove("is-open");
-    productTrigger.setAttribute("aria-expanded", "false");
-    if (returnFocus) productTrigger.focus();
+  const dropdownMenus = $$(".nav-products");
+  const closeDropdowns = (except = null, returnFocus = false) => {
+    dropdownMenus.forEach((menu) => {
+      if (menu === except) return;
+      const trigger = $(".nav-products-trigger", menu);
+      const wasOpen = menu.classList.contains("is-open");
+      menu.classList.remove("is-open");
+      trigger?.setAttribute("aria-expanded", "false");
+      if (returnFocus && wasOpen) trigger?.focus();
+    });
   };
 
-  if (productMenu && productTrigger && productSubmenu) {
-    const productLinks = $$("a", productSubmenu);
-    const openProductMenu = () => {
-      productMenu.classList.add("is-open");
-      productTrigger.setAttribute("aria-expanded", "true");
+  dropdownMenus.forEach((dropdownMenu) => {
+    const dropdownTrigger = $(".nav-products-trigger", dropdownMenu);
+    const dropdownSubmenu = $(".products-submenu", dropdownMenu);
+    if (!dropdownTrigger || !dropdownSubmenu) return;
+    const dropdownLinks = $$("a", dropdownSubmenu);
+    const closeDropdown = (returnFocus = false) => {
+      dropdownMenu.classList.remove("is-open");
+      dropdownTrigger.setAttribute("aria-expanded", "false");
+      if (returnFocus) dropdownTrigger.focus();
+    };
+    const openDropdown = () => {
+      closeDropdowns(dropdownMenu);
+      dropdownMenu.classList.add("is-open");
+      dropdownTrigger.setAttribute("aria-expanded", "true");
     };
 
-    productTrigger.addEventListener("click", () => {
-      if (productMenu.classList.contains("is-open")) closeProductMenu();
-      else openProductMenu();
+    dropdownTrigger.addEventListener("click", () => {
+      if (dropdownMenu.classList.contains("is-open")) closeDropdown();
+      else openDropdown();
     });
-    productTrigger.addEventListener("keydown", (event) => {
+    dropdownTrigger.addEventListener("keydown", (event) => {
       if (event.key !== "ArrowDown") return;
       event.preventDefault();
-      openProductMenu();
-      productLinks[0]?.focus();
+      openDropdown();
+      dropdownLinks[0]?.focus();
     });
-    productSubmenu.addEventListener("keydown", (event) => {
+    dropdownSubmenu.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
         event.preventDefault();
-        closeProductMenu(true);
+        closeDropdown(true);
         return;
       }
       if (!["ArrowDown", "ArrowUp", "Home", "End"].includes(event.key)) return;
       event.preventDefault();
-      const current = Math.max(0, productLinks.indexOf(document.activeElement));
+      const current = Math.max(0, dropdownLinks.indexOf(document.activeElement));
       const next =
         event.key === "Home"
           ? 0
           : event.key === "End"
-            ? productLinks.length - 1
+            ? dropdownLinks.length - 1
             : event.key === "ArrowDown"
-              ? (current + 1) % productLinks.length
-              : (current - 1 + productLinks.length) % productLinks.length;
-      productLinks[next]?.focus();
+              ? (current + 1) % dropdownLinks.length
+              : (current - 1 + dropdownLinks.length) % dropdownLinks.length;
+      dropdownLinks[next]?.focus();
     });
+  });
+
+  if (dropdownMenus.length) {
     document.addEventListener("click", (event) => {
-      if (!productMenu.contains(event.target)) closeProductMenu();
+      if (!event.target.closest(".nav-products")) closeDropdowns();
     });
   }
 
@@ -176,13 +190,13 @@
         open ? "Open navigation" : "Close navigation",
       );
       nav.classList.toggle("open", !open);
-      if (open) closeProductMenu();
+      if (open) closeDropdowns();
     });
     $$("a", nav).forEach((link) =>
       link.addEventListener("click", () => {
         menuButton.setAttribute("aria-expanded", "false");
         nav.classList.remove("open");
-        closeProductMenu();
+        closeDropdowns();
       }),
     );
   }
