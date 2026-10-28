@@ -1229,6 +1229,7 @@
     let key = "frevone";
     let step = 0;
     let timer = null;
+    let lastRenderedKey = "";
     const tabs = $$("[data-demo-product]", compactDemo);
     const productKeys = tabs.map((tab) => tab.dataset.demoProduct);
     const reducedMotion = matchMedia(
@@ -1248,6 +1249,16 @@
           String(tab.dataset.demoProduct === key),
         ),
       );
+      if (
+        lastRenderedKey &&
+        lastRenderedKey !== key &&
+        window.matchMedia("(max-width: 760px)").matches
+      ) {
+        tabs
+          .find((tab) => tab.dataset.demoProduct === key)
+          ?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+      }
+      lastRenderedKey = key;
       $("[data-demo-label]", compactDemo).textContent = story.label;
       $("[data-demo-title]", compactDemo).textContent = story.title;
       $("[data-demo-problem]", compactDemo).textContent = story.problem;
@@ -1362,7 +1373,7 @@
   if (engineeringSection) {
     const serviceTabs = $$("[data-service-key]", engineeringSection);
     const servicePanel = $("#service-example", engineeringSection);
-    const selectService = (key, moveFocus = false) => {
+    const selectService = (key, moveFocus = false, revealPanel = false) => {
       const service = engineeringServices[key];
       const activeTab = serviceTabs.find(
         (tab) => tab.dataset.serviceKey === key,
@@ -1388,10 +1399,19 @@
       void servicePanel.offsetWidth;
       servicePanel.classList.add("is-refreshed");
       if (moveFocus) activeTab.focus();
+      if (
+        revealPanel &&
+        window.matchMedia("(max-width: 600px)").matches
+      ) {
+        window.setTimeout(
+          () => servicePanel.scrollIntoView({ behavior: "smooth", block: "start" }),
+          60,
+        );
+      }
     };
     serviceTabs.forEach((tab, index) => {
       tab.addEventListener("click", () =>
-        selectService(tab.dataset.serviceKey),
+        selectService(tab.dataset.serviceKey, false, true),
       );
       tab.addEventListener("keydown", (event) => {
         let nextIndex = index;
@@ -1722,6 +1742,40 @@
     };
     updateCompactHeader();
     window.addEventListener("scroll", requestHeaderUpdate, { passive: true });
+  }
+
+  const mobileMotionQuery = window.matchMedia("(max-width: 760px)");
+  if (
+    mobileMotionQuery.matches &&
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+    "IntersectionObserver" in window
+  ) {
+    document.documentElement.classList.add("mobile-motion");
+    const motionTargets = $$([
+      ".portfolio-showcase",
+      ".desk-feature-stage",
+      ".desk-tour",
+      ".asset-command",
+      ".permit-lifecycle-board",
+      ".handoff-board",
+      ".reach-overview",
+      ".payroll-stage",
+    ].join(","));
+    const mobileMotionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) =>
+          entry.target.classList.toggle(
+            "is-mobile-visible",
+            entry.isIntersecting,
+          ),
+        );
+      },
+      { rootMargin: "18% 0px", threshold: 0.05 },
+    );
+    motionTargets.forEach((target) => {
+      target.classList.add("mobile-motion-target");
+      mobileMotionObserver.observe(target);
+    });
   }
 
   if (!document.querySelector(".whatsapp-contact")) {

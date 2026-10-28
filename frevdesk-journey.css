@@ -607,6 +607,17 @@
   }
 }
 
+@keyframes desk-panel-mobile-in {
+  from {
+    opacity: 0;
+    transform: translateX(18px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
 .tour-email {
   padding: 0 20px 18px;
 }
@@ -2356,7 +2367,7 @@
   }
 
   .desk-journey {
-    padding: 58px 14px 64px !important;
+    padding: 36px 14px 52px !important;
   }
 
   .desk-tour {
@@ -2364,12 +2375,24 @@
   }
 
   .desk-tour-progress {
-    height: 65px;
-    padding: 0 8px;
+    position: relative;
+    height: 54px;
+    padding: 0 12px 16px;
   }
 
   .desk-tour-progress span {
-    font-size: 6px;
+    font-size: 0;
+  }
+
+  .desk-tour-progress::after {
+    position: absolute;
+    bottom: 4px;
+    left: 14px;
+    color: #17204f;
+    content: attr(data-active-label);
+    font-size: 9px;
+    font-weight: 850;
+    letter-spacing: 0;
   }
 
   .desk-tour-shell {
@@ -2410,6 +2433,10 @@
   .tour-panel {
     height: calc(100% - 24px);
     inset: 12px;
+  }
+
+  .tour-panel.is-active {
+    animation: desk-panel-mobile-in 0.55s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .tour-email,
@@ -2481,7 +2508,7 @@
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
-    font-size: 7px;
+    font-size: 9px;
   }
 
   .tour-report {
@@ -2535,12 +2562,28 @@
   }
 
   .tour-narration strong {
-    font-size: 9px;
+    font-size: 11px;
   }
 
   .tour-narration p {
-    font-size: 7px;
-    line-height: 1.35;
+    font-size: 9px;
+    line-height: 1.4;
+  }
+
+  .email-body,
+  .tour-ticket-grid strong,
+  .classification-fields strong,
+  .technician-profile strong,
+  .tour-history li strong {
+    font-size: 10px;
+  }
+
+  .tour-email dl,
+  .tour-ticket-grid small,
+  .classification-fields small,
+  .technician-profile small,
+  .tour-history li p {
+    font-size: 8px;
   }
 
   .desk-assets-section {

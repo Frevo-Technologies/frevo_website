@@ -167,6 +167,8 @@
       step.classList.toggle("is-complete", progressIndex < scene.step);
       step.classList.toggle("is-active", progressIndex === scene.step);
     });
+    const progress = tour.querySelector(".desk-tour-progress");
+    if (progress) progress.dataset.activeLabel = scene.title;
     fields.count.textContent = `${String(index + 1).padStart(2, "0")} / ${String(scenes.length).padStart(2, "0")}`;
     fields.title.textContent = scene.title;
     fields.state.textContent = scene.state;

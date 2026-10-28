@@ -7,6 +7,9 @@ if (journey) {
   const routes = [...journey.querySelectorAll("[data-fj-route]")];
   const nodes = [...journey.querySelectorAll("[data-fj-node]")];
   const chapterLabels = [...journey.querySelectorAll(".fj-chapters span")];
+  const isMobileJourney = window.matchMedia("(max-width: 820px)").matches;
+  const mobileRoute = journey.querySelector("[data-fj-mobile-route]");
+  const mobileProcess = journey.querySelector("[data-fj-mobile-process]");
   const token = document.createElement("div");
   token.className = "fj-token";
   token.innerHTML = "<strong>Record</strong><small>Moving</small>";
@@ -352,6 +355,108 @@ if (journey) {
     },
   ];
 
+  const mobileStepLabels = [
+    ["Create role", "Careers portal", "Sourcing", "Referrals"],
+    ["Application", "ATS evidence", "Shortlist", "Interview"],
+    ["Offer", "Documents", "Employee ID", "ESS access"],
+    ["Mobile", "Biometric", "Policy", "Payslip"],
+  ];
+  const mobileStepNodes = [
+    [0, 1, 2, 3],
+    [0, 1, 1, 3],
+    [0, 1, 2, 3],
+    [0, 4, 1, 3],
+  ];
+  const mobileProcesses = [
+    {
+      eyebrow: "RECRUITMENT DISTRIBUTION",
+      layout: "branch",
+      nodes: [
+        ["JD", "Upload job description", "Approved role and hiring criteria", "/assets/policy-document.png"],
+        ["CP", "Company careers portal", "Published automatically", "/assets/careers-portal.png"],
+        ["RS", "Recruiter sourcing", "Shared without re-entry", "/assets/stakeholder-meeting.png"],
+        ["ER", "Employee referrals", "Referral channel enabled", "/assets/employee-group.png"],
+      ],
+      paths: [
+        "M180 105 C150 132 80 132 56 190",
+        "M180 105 L180 190",
+        "M180 105 C210 132 280 132 304 190",
+      ],
+    },
+    {
+      eyebrow: "ATS & INTERVIEWS",
+      layout: "vertical",
+      nodes: [
+        ["CV", "Candidate uploads resume", "Application record created", "/assets/meera-sharma-demo.png"],
+        ["86", "ATS prepares match score", "Evidence against configured criteria", "/assets/policy-document.png"],
+        ["SL", "Recruiter shortlists", "Human decision recorded", "/assets/employee-group.png"],
+        ["IN", "Interview is scheduled", "Candidate and panel notified", "/assets/interview-calendar.png"],
+      ],
+      paths: ["M180 112 L180 178", "M180 238 L180 304", "M180 364 L180 430"],
+    },
+    {
+      eyebrow: "GUIDED ONBOARDING",
+      layout: "vertical",
+      nodes: [
+        ["OK", "Offer is accepted", "Joining workflow begins", "/assets/interview-calendar.png"],
+        ["DC", "Documents are submitted", "HR verifies the checklist", "/assets/policy-document.png"],
+        ["ID", "Employee ID is created", "Recruitment history stays connected", "/assets/employee-id.png"],
+        ["ESS", "Self-service is enabled", "Employee and manager receive access", "/assets/office-building.png"],
+      ],
+      paths: ["M180 112 L180 178", "M180 238 L180 304", "M180 364 L180 430"],
+    },
+    {
+      eyebrow: "ATTENDANCE TO PAYROLL",
+      layout: "merge",
+      nodes: [
+        ["MB", "Mobile attendance", "Time and location received", "/assets/attendance-mobile.png"],
+        ["BIO", "Biometric attendance", "Device timestamp received", "/assets/biometric-device.png"],
+        ["PL", "Policy is applied", "Inputs evaluated consistently", "/assets/policy-document.png"],
+        ["PS", "Payroll and payslip", "Reviewed outputs are published", "/assets/payroll-output.png"],
+      ],
+      paths: [
+        "M92 126 C92 178 150 178 180 226",
+        "M268 126 C268 178 210 178 180 226",
+        "M180 292 L180 400",
+      ],
+    },
+  ];
+
+  const renderMobileProcess = (chapterIndex, stepIndex) => {
+    if (!isMobileJourney || !mobileProcess) return;
+    const process = mobileProcesses[chapterIndex];
+    const connectorPaths = process.paths
+      .map(
+        (path, index) =>
+          `<path class="${index + 1 <= stepIndex ? "is-visible" : ""}" d="${path}"></path>`,
+      )
+      .join("");
+    const processNodes = process.nodes
+      .map((node, index) => {
+        const state =
+          index < stepIndex
+            ? "is-visible is-complete"
+            : index === stepIndex
+              ? "is-visible is-active"
+              : "";
+        const visual = node[3]
+          ? `<img src="${node[3]}" alt="" loading="eager" decoding="async">`
+          : `<span>${node[0]}</span>`;
+        return `<article class="${state}" data-process-node="${index}">${visual}<div><strong>${node[1]}</strong><small>${node[2]}</small></div></article>`;
+      })
+      .join("");
+    mobileProcess.className = `fj-mobile-process layout-${process.layout}`;
+    mobileProcess.innerHTML = `
+      <header><span>${process.eyebrow}</span><strong>${String(stepIndex + 1).padStart(2, "0")} / 04</strong></header>
+      <div class="fj-process-map">
+        <svg viewBox="0 0 360 520" preserveAspectRatio="none" aria-hidden="true">
+          <defs><marker id="fj-mobile-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z"></path></marker></defs>
+          ${connectorPaths}
+        </svg>
+        ${processNodes}
+      </div>`;
+  };
+
   let currentKey = "";
   let ticking = false;
 
@@ -418,6 +523,9 @@ if (journey) {
     const stepProgress = stepScaled - stepIndex;
     const step = chapter.steps[stepIndex];
     const key = `${chapterIndex}-${stepIndex}`;
+    const activeNodeIndex = isMobileJourney
+      ? mobileStepNodes[chapterIndex][stepIndex]
+      : chapter.stepRoutes?.[stepIndex] ?? stepIndex;
 
     root.style.setProperty("--fj-progress", progress.toFixed(4));
     root.style.setProperty(
@@ -438,23 +546,45 @@ if (journey) {
     if (key !== currentKey) {
       currentKey = key;
       screen.innerHTML = `<div class="fj-screen-inner">${views[step[2]]()}</div>`;
-      $("[data-fj-step]").textContent =
-        `STEP ${String(stepIndex + 1).padStart(2, "0")}`;
-      $("[data-fj-action-title]").textContent = step[0];
-      $("[data-fj-action-copy]").textContent = step[1];
+      $("[data-fj-step]").textContent = isMobileJourney
+        ? "CHANGE"
+        : `STEP ${String(stepIndex + 1).padStart(2, "0")}`;
+      $("[data-fj-action-title]").textContent = isMobileJourney
+        ? `${step[3]} - ${step[4]}`
+        : step[0];
+      $("[data-fj-action-copy]").textContent = isMobileJourney
+        ? step[0]
+        : step[1];
+      if (isMobileJourney && mobileRoute) {
+        mobileRoute.innerHTML = mobileStepLabels[chapterIndex]
+          .map(
+            (label, index) =>
+              `<span class="${index < stepIndex ? "is-complete" : index === stepIndex ? "is-active" : ""}"><b>${String(index + 1).padStart(2, "0")}</b><small>${label}</small></span>`,
+          )
+          .join("");
+      }
+      renderMobileProcess(chapterIndex, stepIndex);
       token.innerHTML = `<strong>${step[3]}</strong><small>${step[4]}</small>`;
     }
 
     nodes.forEach((node, index) => {
+      node.classList.toggle("is-current", index === activeNodeIndex);
       if (!chapter.nodes[index]) {
         node.style.setProperty("--node-opacity", 0);
         return;
       }
       const order = chapter.nodeOrder?.[index] ?? index;
       const reveal = smooth(order * 0.16 + 0.01, order * 0.16 + 0.13, local);
-      node.style.setProperty("--node-opacity", reveal.toFixed(3));
-      node.style.setProperty("--node-y", `${(1 - reveal) * 18}px`);
-      node.style.setProperty("--node-scale", (0.94 + reveal * 0.06).toFixed(3));
+      const visibleReveal =
+        isMobileJourney && index === activeNodeIndex
+          ? Math.max(reveal, 0.96)
+          : reveal;
+      node.style.setProperty("--node-opacity", visibleReveal.toFixed(3));
+      node.style.setProperty("--node-y", `${(1 - visibleReveal) * 18}px`);
+      node.style.setProperty(
+        "--node-scale",
+        (0.94 + visibleReveal * 0.06).toFixed(3),
+      );
       node.style.setProperty(
         "--node-z",
         `${(12 + ((index % 3) + 1) * 7 * reveal).toFixed(2)}px`,
